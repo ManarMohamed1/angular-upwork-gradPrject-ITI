@@ -6,6 +6,7 @@ import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HomeComponent } from './screens/home/home.component';
 import { NavbarCategoriesComponent } from './layout/navbar-categories/navbar-categories.component';
+import { DropdownComponent } from './shared/dropdown/dropdown.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { NavbarCategoriesComponent } from './layout/navbar-categories/navbar-cat
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    NavbarCategoriesComponent
+    NavbarCategoriesComponent,
+    DropdownComponent
   ],
   imports: [
     BrowserModule
