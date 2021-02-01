@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="SignUp.css">
+<title>Sign Up</title>
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/f920b6a455.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div id="firstDiv">
+        <div class="container" id="blueForm">
+            <div class="row">
+                <nav class="navbar navbar-expand-lg navbar-dark d-sm-none d-md-none d-lg-none d-xl-block d-none">
+                    <a class="navbar-brand" href="index.html">
+                        <img id="imgLogoLg" src="upwork.png">
+                    </a>
+                </nav>
+            </div>
+        </div>
+        <div class="container-fluid" id="blueForm">
+            <div class="row">
+                <nav class="navbar navbar-expand-lg navbar-dark d-md-block d-sm-block d-lg-block d-xl-none">
+                    <a class="navbar-brand" href="index.html">
+                        <img id="imgLogoSm" src="upwork.png">
+                    </a>
+                </nav>
+            </div>
+        </div>
+        <div id="secondDiv">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-3 d-xl-block d-lg-none d-sm-none d-md-none d-none "></div>
+                    <div class="col-xl-6 col-12 col-sm-12 col-md-12" id="formDesign">
+                        <h2><b>Log in and get to work</b></h2>
+
+                        <input type="email" placeholder="Username or Email" id="emailField">
+
+                        <button id="EmailButton" type="button" class="btn btn-white btns"> 
+                    <b>Continue</b></button>
+
+                        <p class="separator">
+                            <span id="firstSpan">or</span>
+                        </p>
+
+                        <a target="popup" onclick="window.open('https://accounts.google.com/signin/v2/identifier?hl=ar&continue=https%3A%2F%2Fwww.google.com%2Fsearch%3Fsafe%3Dactive%26source%3Dhp%26ei%3D2-PjX_HvB8-Ma73wkIAI%26q%3Dgoogle%2Baccount%26oq%3Dgoogle%2Bacc%26gs_lcp%3DCgZwc3ktYWIQAxgAMgUIABCxAzICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADoGCAAQChABOgoIABCxAxCDARAKOggIABCxAxCDAVCEC1jUJmDoL2gBcAB4AIABdogB0QeSAQM4LjKYAQCgAQGqAQdnd3Mtd2l6sAEA%26sclient%3Dpsy-ab&ec=GAlAAQ&flowName=GlifWebSignIn&flowEntry=AddSession','name','width=600,height=400')">
+                            <button type="button" class="btn btn-primary btns">
+                    <img id="googleImage" src="gogle.png">
+                   <b> Sign In With Google</b></button></a>
+
+                        <a target="popup" onclick="window.open('https://idmsa.apple.com/IDMSWebAuth/signin?appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2Faccount%2F&rv=1','name','width=600,height=400')">
+                            <button id="AppleButton" type="button" class="btn btn-white btns">
+                        <i id="appleIcon" class="fab fa-apple"></i> Sign In With Apple</button></a>
+
+                        <hr>
+                        <p class="secondSeparator">
+                            <span id="secondSpan">New to Upwork?</span>
+                        </p>
+
+                        <a href="login.html">
+                            <button id="SignUpButton" type="button" class="btn btn-white btns">
+                    <b>Sign Up</b></button></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div>
+            <p class="footer-copyright"> © 2015 - 2020 Upwork® Global Inc.</p>
+            <ul class="footer-list">
+                <li class="footer-list-item">
+                    <a class="footer-list-link" href="#">Terms of Service</a>
+                </li>
+                <li class="footer-list-item">
+                    <a class="footer-list-link" href="#">Privacy Policy</a>
+                </li>
+                <li class="footer-list-item">
+                    <a class="footer-list-link" href="#">Accessibility</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+
+</html>

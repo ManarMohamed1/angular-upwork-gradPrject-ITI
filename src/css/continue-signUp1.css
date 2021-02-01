@@ -1,0 +1,150 @@
+.insideLoginWord {
+    color: white;
+    padding-top: 15px;
+    float: left;
+}
+
+#loginWord {
+    color: #37a000;
+    float: right;
+    padding-top: 15px;
+}
+
+#imgLogo {
+    width: 50%;
+}
+
+#formDesign {
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+    width: 60%;
+    margin-top: 20px;
+    /*margin-left: 19%;*/
+}
+
+#blueForm {
+    padding-bottom: 50px;
+}
+
+h2 {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+#CreateButton {
+    width: 40%;
+    background-color: #37a000;
+    color: white;
+    margin-bottom: 60px;
+}
+
+#firstDiv {
+    background-color: #1d4354;
+}
+
+.secondDiv {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.imgAuto {
+    padding-top: 60px;
+}
+
+.imgEg {
+    padding-top: 20px;
+}
+
+.imgAir {
+    padding-top: 45px;
+}
+
+.imgBissel {
+    padding-top: 20px;
+}
+
+.imgMicro {
+    padding-top: 35px;
+}
+
+.lastDiv {
+    background-color: #f9f9f9;
+}
+
+h4 {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#lastMiddleDiv {
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+.imgLastDiv {
+    border-radius: 50%;
+}
+
+img {
+    width: 80%;
+}
+
+footer {
+    background-color: #1d4354;
+    text-align: center;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+
+.aInDiv {
+    color: #37a000;
+}
+
+a {
+    color: white;
+}
+
+ul {
+    list-style: none;
+    padding-top: 10px;
+}
+
+.dropdownbutton {
+    width: 70%;
+    font-size: 20px;
+    padding-bottom: 10px;
+    border: 1px solid lightgray;
+    margin-bottom: 10px;
+}
+
+.paragraph {
+    font-size: 20px;
+    text-align: center;
+}
+
+.twiceButton {
+    border: lightgray 1px solid;
+}
+
+.twiceButton:hover {
+    background-color: #378b37;
+    color: white;
+}
+
+.check {
+    padding-top: 50px;
+    padding-left: 110px;
+    padding-right: 110px;
+}
+
+.check2 {
+    padding-left: 93px;
+    padding-right: 110px;
+    padding-bottom: 50px;
+}
