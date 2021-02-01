@@ -1,0 +1,2091 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+  <title>Upwork</title>
+  <style>
+    *,
+    ::after,
+    ::before {
+
+      box-sizing: border-box;
+
+    }
+
+    #searchin {
+      width: 20rem;
+      height: auto;
+      padding: .5rem;
+      border-radius: 50px;
+      border: none;
+      background-color: #245f7c;
+      color: white;
+    }
+
+    ::placeholder {
+      color: white;
+      opacity: 1;
+      padding-left: 3rem;
+    }
+
+    #signupbtn {
+      width: 7rem;
+      padding: 1%;
+      font-size: 1.2rem;
+    }
+
+    .nav-link {
+      padding: 0%;
+    }
+
+    .pricing-table-section {
+      overflow: hidden;
+    }
+
+    .vs-bg-gray-lightest {
+      background: #f9f9f9;
+    }
+
+    .fescue-use-cases-section .use-cases-content {
+      border: 1px solid #e0e0e0;
+    }
+
+    .vs-bg-white {
+      background: #fff;
+    }
+
+    .fescue-use-cases-section .green-dash {
+      width: 31px;
+      height: 7px;
+      background: #5bbc2e;
+    }
+
+    p {
+      margin: 0 0 30px;
+      line-height: 21px;
+    }
+
+    .display-1.h2,
+    h2.display-1 {
+      font-size: 35px;
+      line-height: 43px;
+      font-weight: #fff;
+    }
+
+    .vs-color-gray {
+      color: #656565;
+    }
+
+    .up-card {
+      position: relative;
+      background-color: #fff;
+      margin: 10px -15px;
+      padding: 15px;
+      box-shadow: none;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .vs-flex-column {
+      flex-direction: column;
+    }
+
+    .pricing-table-section div.up-card>div:first-child {
+      border-bottom: 1px solid #656565;
+    }
+
+    .display-1.h3,
+    h3.display-1 {
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: bold;
+    }
+
+    .pricing-table-section .separator {
+      width: 100px;
+      height: 2px;
+    }
+
+    .pricing-table-section .row {
+      justify-content: center;
+    }
+
+    .pricing-table-section .col-lg-4 {
+      max-width: 27.333333%;
+    }
+
+    .center-block {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .vs-bg-gray-light {
+      background: #e0e0e0;
+    }
+
+    .up-btn-primary {
+      color: #fff;
+      background-color: #37a000;
+      border-color: transparent;
+    }
+
+    .up-btn {
+      padding: 12px 29px;
+      box-shadow: none;
+      border: 1px solid #37a000;
+      border-radius: 3px;
+      font-weight: bold;
+      display: inline-block;
+      margin: 0 20px 30px 0;
+      margin-top: 0px;
+      margin-right: 20px;
+      margin-bottom: 30px;
+      font-size: 14px;
+      line-height: 1;
+      text-align: center;
+      vertical-align: middle;
+      white-space: nowrap;
+      user-select: none;
+      transition: all .15s;
+      cursor: pointer;
+    }
+
+    .pricing-table-section div.up-card>div:not(:first-child) {
+      flex: 1;
+      height: auto !important;
+    }
+
+    .pricing-table-section .up-c-collapse[collapsed="true"] {
+      display: block !important;
+    }
+
+    .up-c-collapse {
+      transition: max-height .35s ease-in;
+      transition: max-height ease-in var(--collapse-duration, .35s);
+      max-height: var(--collapse-max-height);
+    }
+
+    .pricing-table-section .feature {
+      position: relative;
+    }
+
+    .pricing-table-section .feature>.up-icon {
+      position: absolute;
+      top: 1px;
+      left: -4px;
+    }
+
+    .up-icon {
+      --size: 14px;
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+    }
+
+    .up-icon>svg {
+      fill: currentColor;
+      -o-object-fit: contain;
+      object-fit: contain;
+      width: 100% !important;
+      height: 100% !important;
+      display: block;
+    }
+
+    .pricing-table-section div.up-card>button {
+      border: none;
+      border-top-color: currentcolor;
+      border-top-style: none;
+      border-top-width: medium;
+      border-radius: 0;
+      border-top: 1px solid var(--gray-4);
+      margin-top: -1px;
+    }
+
+    .pricing-table-section .pricing-table-footer {
+      margin-left: 18.5%;
+      margin-top: 4%;
+    }
+
+    .clearly-rated-section {
+      letter-spacing: -.6px;
+    }
+
+    a.no-style {
+      text-decoration: none;
+    }
+
+    .vs-color-text {
+      color: #444;
+    }
+
+    .display-3.h4,
+    h4.display-3 {
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: bold;
+    }
+
+    .vs-color-raw-sienna {
+      color: #d5763d;
+    }
+
+    .clearly-rated-section .content .logo {
+      height: 42px;
+      margin-top: -17px;
+    }
+
+    .vs-bg-gray-logo {
+      background: #494949;
+    }
+
+    .video-testimonial-section .flex-reverse {
+      flex-flow: row-reverse wrap;
+    }
+
+    .video-element {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .vs-shadow-dark {
+      transition: box-shadow .3s;
+      box-shadow: 0 1px 9px rgba(15, 18, 18, .35);
+    }
+
+    .video-element .iframe-wrapper {
+      overflow: hidden;
+      width: 100%;
+      padding-bottom: 56.25%;
+    }
+
+    .video-element .iframe-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .video-testimonial-section .overview-testimonial {
+      font-size: 15px;
+      line-height: 23px;
+      font-weight: 400;
+    }
+
+    .vs-color-gray-granite {
+      color: #a0a0a0;
+    }
+
+    .video-testimonial-section .image-wrapper>img {
+      width: 40px;
+      height: 40px;
+      border-radius: 100px;
+    }
+
+    .display-1.h2,
+    h2.display-1 {
+      font-size: 35px;
+      line-height: 43px;
+      font-weight: #fff;
+    }
+
+    .display-u2u-h5,
+    .h5.display-u2u,
+    .lead-intro,
+    h5.display-u2u {
+      font-size: 18px;
+      line-height: 27px;
+    }
+
+    .display-u2u-h5,
+    .h3.display-u2u,
+    .h4.display-u2u,
+    .h5.display-u2u,
+    h3.display-u2u,
+    h4.display-u2u,
+    h5.display-u2u {
+      font-family: inherit;
+      font-weight: 500;
+    }
+
+    .ellipsis {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .up-btn-default {
+      color: #37a000;
+      background-color: #fff;
+    }
+
+    .up-card {
+      margin: 30px -30px;
+      padding: 30px;
+    }
+
+    .up-card {
+      position: relative;
+      background-color: #fff;
+      margin: 10px -15px;
+      padding: 15px;
+      box-shadow: 0 1px 6px rgba(#ccc, .35);
+      border-radius: 2px;
+    }
+
+    h2.display-rebrand {
+      font-size: 32px;
+      line-height: 44px;
+    }
+
+    .payoff-title {
+      color: #1d4354
+    }
+
+    .vs-bg-midnight-blue {
+      background: #1d4354;
+    }
+
+    .payroll-footer-link-section .payroll-link {
+      border-bottom: 1px solid #2b5468;
+
+    }
+
+    .vs-color-gray-light {
+      color: #e0e0e0;
+    }
+
+    .payroll-footer-link-section a {
+      text-decoration: underline;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+
+    .sr-only,
+    fieldset,
+    legend {
+      padding: 0;
+    }
+
+
+    .footer-visitor {
+
+      color: #fff;
+      font-size: 13px;
+      background-color: #1d4354;
+
+    }
+
+    .footer-toggle .column-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #e0e0e0;
+    }
+
+    .footer-visitor .column-header {
+      font-weight: bold;
+      line-height: 15px;
+    }
+
+    .footer-toggle>div {
+      display: block;
+      height: auto !important;
+    }
+
+    .footer-visitor ul {
+      margin: 20px 0;
+    }
+
+    .list-inline,
+    .list-unstyled {
+      padding-left: 0;
+      list-style: none;
+    }
+
+    ol li,
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-toggle>div a {
+      font-weight: 300;
+      color: #e0e0e0;
+    }
+
+    .footer-visitor a,
+    .footer-visitor a:hover {
+      color: #a0a0a0;
+    }
+
+    .up-footer-social {
+      display: grid;
+      padding: 9px 0;
+      margin-top: 30px;
+      border-top: solid 1px #2b5468;
+      border-bottom: solid 1px #2b5468;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .up-footer-social .up-footer-social-icons {
+      display: flex;
+      align-items: center;
+    }
+
+    .up-footer-social .up-footer-social-header {
+      margin-right: 25px;
+      font-size: 12px;
+    }
+
+    .up-footer-social .up-footer-social-header {
+      margin: 0;
+      color: #eee;
+      line-height: 15px;
+      font-weight: bold;
+    }
+
+    .up-footer-social .up-footer-social-list {
+      margin: 0;
+    }
+
+    .up-footer-social .up-footer-social-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .up-footer-social .up-footer-social-list-item {
+      display: inline-block;
+      margin: 0 10px 0 0;
+    }
+
+    .up-footer-social .up-footer-social-list-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      color: #eee;
+      background: #1d4354;
+      text-align: center;
+      border-radius: 50%;
+    }
+
+    .up-icon {
+      --size: 14px;
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+    }
+
+    .up-icon>svg {
+      fill: currentColor;
+      -o-object-fit: contain;
+      object-fit: contain;
+      width: 100% !important;
+      height: 100% !important;
+      display: block;
+    }
+
+    .up-footer-social .up-footer-social-icons {
+      display: flex;
+      align-items: center;
+    }
+
+    .up-footer-social .up-footer-download {
+      justify-content: flex-end;
+      border-bottom: none;
+    }
+
+    .up-footer-visitor-copyright {
+      margin: 30px 0;
+      text-align: center;
+      color: #e0e0e0;
+    }
+  </style>
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top"
+    style="background-color:#2b5468 ;padding: 1rem; color: #fff;">
+    <a class="navbar-brand" href="#">
+      <svg width="8rem" viewBox="0 0 512 153" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid"
+        style="margin-left: 5%;margin-right:2%">
+        <path
+          d="M140.107 96.628c-8.321 0-16.118-3.523-23.202-9.258l1.725-8.096.075-.3c1.536-8.62 6.409-23.089 21.402-23.089 11.244 0 20.39 9.146 20.39 20.39-.038 11.207-9.183 20.353-20.39 20.353zm0-61.395c-19.154 0-33.996 12.444-40.03 32.909-9.221-13.831-16.193-30.435-20.278-44.416H59.184v53.636c0 10.57-8.621 19.19-19.191 19.19-10.57 0-19.19-8.62-19.19-19.19V23.726H.186v53.636c-.075 21.965 17.804 39.993 39.768 39.993 21.965 0 39.844-18.028 39.844-39.993v-8.995c4.01 8.358 8.92 16.791 14.88 24.288l-12.632 59.37h21.103l9.145-43.066c8.021 5.135 17.242 8.359 27.812 8.359 22.601 0 41.005-18.516 41.005-41.118 0-22.564-18.404-40.967-41.005-40.967z"
+          fill="#6FDA44" />
+        <path
+          d="M244.043 37.557l13.306 53.636 14.656-53.636h17.466l-22.526 77.512h-17.467l-13.83-53.974-13.794 53.936h-17.466L181.86 37.52h17.467l14.655 53.636 13.306-53.636h16.754v.038zm87.22-2.324c-22.676 0-41.042 18.403-41.042 41.042 0 22.677 18.403 41.043 41.042 41.043 22.677 0 41.08-18.366 41.08-41.043 0-22.676-18.403-41.042-41.08-41.042zm0 65.218c-13.343 0-24.138-10.795-24.138-24.138 0-13.344 10.832-24.138 24.138-24.138 13.344 0 24.138 10.794 24.138 24.138 0 13.306-10.794 24.138-24.138 24.138zm90.968-45.54c-11.731 0-21.214 9.52-21.214 21.214v38.906h-17.58V37.557h17.58v11.919s7.496-11.957 22.901-11.957h5.397v17.392h-7.084zm58.997 18.366c12.48-7.047 20.952-20.428 20.952-35.758H484.6c0 12.931-10.494 23.426-23.425 23.426h-2.362V.15h-17.578V115.03h17.578V78.524h2.1c1.724 0 3.973 1.125 4.985 2.511l24.962 33.996h21.065l-30.697-41.754z"
+          fill="white" />
+      </svg>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <form class="form-inline my my-lg-0 text-light">
+        <div style="position: relative;">
+          <input class="form text-light" type="search" id="searchin" placeholder="Search" />
+          <div class="dropdown text-success" style="position: absolute;top: 0px; right: 80%;">
+            <i class="fas fa-search"></i>
+            <a class="btn btn-secondary dropdown-toggle text-success bg-transparent border-0" href="#" role="button"
+              id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="#"><i class="fas fa-user-alt"></i>&nbsp;&nbsp;Browse
+                talent</a>
+              <a class="dropdown-item" href="#"><i class="fas fa-file-alt"></i>&nbsp;&nbsp;Shop by
+                project</a>
+              <a class="dropdown-item" href="#"><i class="fas fa-briefcase"></i>&nbsp;&nbsp;Explore
+                jobs</a>
+            </div>
+          </div>
+        </div>
+      </form>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link text-light" href="#">Projects <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#">How it work</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#">Enterprise</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#">Login</a>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-success btn-sm text-light" style="padding: .1rem .5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: .5rem;">
+            <a class="nav-link text-light" href="#">sign up</a>
+          </button>
+        </li>
+
+      </ul>
+
+    </div>
+  </nav>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" style="padding: 10px 25px" href="#">Web Dev <span
+            class="sr-only">(current)</span></a>
+        <a class="nav-link" style="padding: 10px 25px" href="#">Mobile Dev</a>
+        <a class="nav-link" style="padding: 10px 25px" href="#">Design</a>
+        <a class="nav-link" style="padding: 10px 25px" href="#">Writing</a>
+        <a class="nav-link" style="padding: 10px 25px" href="#">Admin Support</a>
+        <a class="nav-link" style="padding: 10px 25px" href="#">Customer Service</a>
+        <a class="nav-link" style="padding: 10px 25px" href="#">Marketing</a>
+        <a class="nav-link" style="padding: 10px 25px" href="#">Accounting</a>
+        <a class="nav-link" style="padding: 10px 25px" href="#">See all Categories</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="pt-4 pt-md-11" style="background-image: url(https://www.upwork.com/static/assets/Brontes/7814396/img/xl.24b3e20.jpg);background-position: 50%;
+    background-size: cover !important;background-repeat: no-repeat;padding: 40px 0;">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-5 col-lg-6 order-md-2">
+        </div>
+        <div class="col-12 col-md-7 col-lg-10 order-md-1 aos-init aos-animate" data-aos="fade-up">
+
+          <!-- Heading -->
+          <div class="row">
+            <h1 class="text-success vs-text-canela vs-color-up-green mb-4 col-10 col-sm-8 col-xl-7">
+              In-demand talent <span class="nowrap">on demand.<sup>TM</sup></span><br> <span
+                class="second-header vs-color-white">
+                Upwork is how.<sup>TM</sup></span></h1>
+          </div>
+          <!-- Text -->
+          <div class="row">
+            <p class="text-light lead-intro vs-color-white d-none d-md-block col-md-8 col-lg-7 col-xl-6">
+              Hire proven pros with confidence using the world’s largest, remote talent platform.
+            </p>
+          </div>
+
+          <!-- Buttons -->
+          <div>
+            <div class="text-light d-flex d-md-block mb-3 mb-md-0">
+              <button tabindex="0" class="btn btn-light cta-group__btn up-btn up-btn-default mb-0 ml-5 mr-0">
+                Watch Demo
+              </button>
+              <a" href="/signup/?accountType=client" tabindex="0"
+                class="cta-group__btn up-btn up-btn-primary mb-0 mr-10 btn btn-success">
+                Get Started</a>
+
+            </div>
+          </div>
+        </div>
+      </div> <!-- / .row -->
+    </div> <!-- / .container -->
+  </section>
+
+  <section class="container my-5">
+    <div class="col-sm-12 col-md-12 col-md-offset-1 col-lg-12 col-lg-offset-0">
+      <h2 class="h3 mb-4">
+        Find quality talent or agencies
+      </h2>
+      <div class="row">
+        <div class="col-md-6 col-lg-3  mb-4 mb-4"><a tabindex="0"
+            class="tile-container vs-bg-white d-flex d-md-block mb-3 mb-md-3 text-center vs-cursor-pointer">
+            <picture class="d-md-none">
+              <source media="(min-width: 768px) and (min-resolution: 192dpi)"
+                srcset="data:image/gif;base64,R0lGODlhAQABAPAAAAAAAAAAACH5BAEAAAAAIf8LSW1hZ2VNYWdpY2sOZ2FtbWE9MC40NTQ1NDUALAAAAAABAAEAAAICRAEAOw==">
+              <img src="https://www.upwork.com/static/assets/Brontes/7814396/img/development.6e91499.svg"
+                alt="Web, Mobile &amp; Software Dev" class="tile-image">
+            </picture>
+            <picture class="d-none d-md-inline-block">
+              <source media="(max-width: 767px) and (min-resolution: 192dpi)"
+                srcset="data:image/gif;base64,R0lGODlhAQABAPAAAAAAAAAAACH5BAEAAAAAIf8LSW1hZ2VNYWdpY2sOZ2FtbWE9MC40NTQ1NDUALAAAAAABAAEAAAICRAEAOw==">
+              <img src="https://www.upwork.com/static/assets/Brontes/7814396/img/development-desktop.29e32ce.svg"
+                alt="Web, Mobile &amp; Software Dev" class="tile-image w-100">
+            </picture>
+            <h4 role="none" class="tile-title my-4 ml-4 ml-md-0">
+              Web, Mobile &amp; Software Dev
+            </h4>
+            <div class="d-flex align-items-center vs-color-gray d-md-none mr-10 mr-md-4 pr-5 pr-md-0">
+              <div class="up-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" aria-hidden="true"
+                  role="img">
+                  <polygon points="11.5 7 4.067 0 2.5 1.476 8.366 7 2.5 12.524 4.067 14"></polygon>
+                </svg></div>
+            </div>
+          </a></div>
+        <div class="col-md-6 col-lg-3  mb-4"><a
+            class="tile-container vs-bg-white d-flex d-md-block mb-3 mb-md-3 text-center vs-cursor-pointer">
+            <picture class="d-md-none">
+              <source media="(min-width: 768px) and (min-resolution: 192dpi)"
+                srcset="data:image/gif;base64,R0lGODlhAQABAPAAAAAAAAAAACH5BAEAAAAAIf8LSW1hZ2VNYWdpY2sOZ2FtbWE9MC40NTQ1NDUALAAAAAABAAEAAAICRAEAOw==">
+              <img src="https://www.upwork.com/static/assets/Brontes/7814396/img/design-creative.7849c93.svg"
+                alt="Design &amp; Creative" class="tile-image w-100">
+            </picture>
+            <picture class="d-none d-md-inline-block">
+              <source media="(max-width: 767px) and (min-resolution: 192dpi)"
+                srcset="data:image/gif;base64,R0lGODlhAQABAPAAAAAAAAAAACH5BAEAAAAAIf8LSW1hZ2VNYWdpY2sOZ2FtbWE9MC40NTQ1NDUALAAAAAABAAEAAAICRAEAOw==">
+              <img src="https://www.upwork.com/static/assets/Brontes/7814396/img/design-creative-desktop.109353b.svg"
+                alt="Design &amp; Creative" class="tile-image w-100">
+            </picture>
+            <h4 role="none" class="tile-title my-4 ml-4 ml-md-0">
+              Design &amp; Creative
+            </h4>
+            <div class="d-flex align-items-center vs-color-gray d-md-none mr-10 mr-md-4 pr-5 pr-md-0">
+              <div class="up-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" aria-hidden="true"
+                  role="img">
+                  <polygon points="11.5 7 4.067 0 2.5 1.476 8.366 7 2.5 12.524 4.067 14">
+                  </polygon>
+                </svg></div>
+            </div>
+          </a></div>
+        <div class="col-md-6 col-lg-3  mb-4"><a
+            class="tile-container vs-bg-white d-flex d-md-block mb-3 mb-md-3 text-center vs-cursor-pointer">
+            <picture class="d-md-none">
+              <source media="(min-width: 768px) and (min-resolution: 192dpi)"
+                srcset="data:image/gif;base64,R0lGODlhAQABAPAAAAAAAAAAACH5BAEAAAAAIf8LSW1hZ2VNYWdpY2sOZ2FtbWE9MC40NTQ1NDUALAAAAAABAAEAAAICRAEAOw==">
+              <img src="https://www.upwork.com/static/assets/Brontes/7814396/img/writing.aadba56.svg" alt="Writing"
+                class="tile-image">
+            </picture>
+            <picture class="d-none d-md-inline-block">
+              <source media="(max-width: 767px) and (min-resolution: 192dpi)"
+                srcset="data:image/gif;base64,R0lGODlhAQABAPAAAAAAAAAAACH5BAEAAAAAIf8LSW1hZ2VNYWdpY2sOZ2FtbWE9MC40NTQ1NDUALAAAAAABAAEAAAICRAEAOw==">
+              <img src="https://www.upwork.com/static/assets/Brontes/7814396/img/writing-desktop.1b7ea27.svg"
+                alt="Writing" class="tile-image w-100">
+            </picture>
+            <h4 role="none" class="tile-title my-4 ml-4 ml-md-0">
+              Writing
+            </h4>
+            <div class="d-flex align-items-center vs-color-gray d-md-none mr-10 mr-md-4 pr-5 pr-md-0">
+              <div class="up-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" aria-hidden="true"
+                  role="img">
+                  <polygon points="11.5 7 4.067 0 2.5 1.476 8.366 7 2.5 12.524 4.067 14">
+                  </polygon>
+                </svg></div>
+            </div>
+          </a></div>
+        <div class="col-md-6 col-lg-3  mb-4"><a
+            class="tile-container vs-bg-white d-flex d-md-block mb-3 mb-md-3 text-center vs-cursor-pointer">
+            <picture class="d-md-none">
+              <source media="(min-width: 768px) and (min-resolution: 192dpi)">
+              <img src="https://www.upwork.com/static/assets/Brontes/7814396/img/marketing-sales.477c8fa.svg"
+                alt="Sales &amp; Marketing" class="tile-image">
+            </picture>
+            <picture class="d-none d-md-inline-block">
+              <source media="(max-width: 767px) and (min-resolution: 192dpi)">
+              <img src="https://www.upwork.com/static/assets/Brontes/7814396/img/marketing-sales-desktop.ebb7dd9.svg"
+                alt="Sales &amp; Marketing" class="tile-image w-100">
+            </picture>
+            <h4 role="none" class="tile-title my-4 ml-4 ml-md-0">
+              Sales &amp; Marketing
+            </h4>
+            <div class="d-flex align-items-center vs-color-gray d-md-none mr-10 mr-md-4 pr-5 pr-md-0">
+              <div class="up-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" aria-hidden="true"
+                  role="img">
+                  <polygon points="11.5 7 4.067 0 2.5 1.476 8.366 7 2.5 12.524 4.067 14">
+                  </polygon>
+                </svg></div>
+            </div>
+          </a></div>
+        <div class="col-md-6 col-lg-3  mb-4"><a
+            class="tile-container vs-bg-white d-flex d-md-block mb-3 mb-md-3 text-center vs-cursor-pointer">
+            <picture class="d-md-none">
+              <source media="(min-width: 768px) and (min-resolution: 192dpi)">
+              <img src="https://www.upwork.com/static/assets/Brontes/7814396/img/admin-support.065335d.svg"
+                alt="Admin Support" class="tile-image">
+            </picture>
+            <picture class="d-none d-md-inline-block">
+              <source media="(max-width: 767px) and (min-resolution: 192dpi)">
+              <img src="https://www.upwork.com/static/assets/Brontes/7814396/img/admin-support-desktop.ff2e0d4.svg"
+                alt="Admin Support" class="tile-image w-100">
+            </picture>
+            <h4 role="none" class="tile-title my-4 ml-4 ml-md-0">
+              Admin Support
+            </h4>
+            <div class="d-flex align-items-center vs-color-gray d-md-none mr-10 mr-md-4 pr-5 pr-md-0">
+              <div class="up-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" aria-hidden="true"
+                  role="img">
+                  <polygon points="11.5 7 4.067 0 2.5 1.476 8.366 7 2.5 12.524 4.067 14">
+                  </polygon>
+                </svg></div>
+            </div>
+          </a></div>
+        <div class="col-md-6 col-lg-3  mb-4"><a
+            class="tile-container vs-bg-white d-flex d-md-block mb-3 mb-md-3 text-center vs-cursor-pointer">
+            <picture class="d-md-none">
+              <source media="(min-width: 768px) and (min-resolution: 192dpi)">
+              <img src="https://www.upwork.com/static/assets/Brontes/7814396/img/customer-service.abfc113.svg"
+                alt="Customer Service" class="tile-image">
+            </picture>
+            <picture class="d-none d-md-inline-block">
+              <source media="(max-width: 767px) and (min-resolution: 192dpi)">
+              <img src="https://www.upwork.com/static/assets/Brontes/7814396/img/customer-service-desktop.22b35df.svg"
+                alt="Customer Service" class="tile-image w-100">
+            </picture>
+            <h4 role="none" class="tile-title my-4 ml-4 ml-md-0">
+              Customer Service
+            </h4>
+            <div class="d-flex align-items-center vs-color-gray d-md-none mr-10 mr-md-4 pr-5 pr-md-0">
+              <div class="up-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" aria-hidden="true"
+                  role="img">
+                  <polygon points="11.5 7 4.067 0 2.5 1.476 8.366 7 2.5 12.524 4.067 14">
+                  </polygon>
+                </svg></div>
+            </div>
+          </a></div>
+        <div class="col-md-6 col-lg-3  mb-4"><a
+            class="tile-container vs-bg-white d-flex d-md-block mb-3 mb-md-3 text-center vs-cursor-pointer">
+            <picture class="d-md-none">
+              <source media="(min-width: 768px) and (min-resolution: 192dpi)">
+              <img src="https://www.upwork.com/static/assets/Brontes/7814396/img/data-science.07000c0.svg"
+                alt="Data Science &amp; Analytics" class="tile-image">
+            </picture>
+            <picture class="d-none d-md-inline-block">
+              <source media="(max-width: 767px) and (min-resolution: 192dpi)">
+              <img src="https://www.upwork.com/static/assets/Brontes/7814396/img/data-science-desktop.b430512.svg"
+                alt="Data Science &amp; Analytics" class="tile-image w-100">
+            </picture>
+            <h4 role="none" class="tile-title my-4 ml-4 ml-md-0">
+              Data Science &amp; Analytics
+            </h4>
+            <div class="d-flex align-items-center vs-color-gray d-md-none mr-10 mr-md-4 pr-5 pr-md-0">
+              <div class="up-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" aria-hidden="true"
+                  role="img">
+                  <polygon points="11.5 7 4.067 0 2.5 1.476 8.366 7 2.5 12.524 4.067 14">
+                  </polygon>
+                </svg></div>
+            </div>
+          </a></div>
+        <div class="col-md-6 col-lg-3  mb-4"><a
+            class="tile-container vs-bg-white d-flex d-md-block mb-3 mb-md-3 text-center vs-cursor-pointer">
+            <picture class="d-none d-md-inline-block">
+              <source media="(max-width: 767px) and (min-resolution: 192dpi)">
+              <img
+                src="https://www.upwork.com/static/assets/Brontes/7814396/img/engineering-architecture-desktop.85b023c.svg"
+                alt="Engineering &amp; Architecture" class="tile-image w-100">
+            </picture>
+            <h4 role="none" class="tile-title my-4 ml-4 ml-md-0">
+              Engineering &amp; Architecture
+            </h4>
+            <div class="d-flex align-items-center vs-color-gray d-md-none mr-10 mr-md-4 pr-5 pr-md-0">
+              <div class="up-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" aria-hidden="true"
+                  role="img">
+                  <polygon points="11.5 7 4.067 0 2.5 1.476 8.366 7 2.5 12.524 4.067 14">
+                  </polygon>
+                </svg></div>
+            </div>
+          </a></div>
+      </div>
+      <div class="view-all-cat-link text-center py-1 pb-md-4 pt-md-4 pb-xl-30">
+        <div class="py-5 py-md-0">
+          Don’t see what you’re looking for? <br class="d-block d-md-none"> <a tabindex="0"
+            class="vs-link-text vs-cursor-pointer">
+            See all categories
+          </a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- <section class="logobar-section  py-5">
+    <div class="container py-4 py-md-3">
+      <div>
+        <div role="heading" aria-level="2" class="vs-font-bold text-center pb-10 mb-0 mb-md-5 body-u2u">Trusted by 5M+
+          businesses</div>
+      </div>
+      <div class="logos d-flex pb-0 pb-md-10 pb-xl-4"></div>
+      <div class="row">
+        <div class=" col-sm-6 col-md-4 col-lg-2">
+          <div class="logo-microsoft">
+            <picture>
+              <img src="https://www.upwork.com/static/assets/Brontes/7814396/img/microsoft.a4ac95d.svg"
+                alt="Microsoft worked with Upwork to collaborate on an integrated solution that helps enterprises work with freelancers at scale powered by Microsoft 365 and Upwork Enterprise.">
+            </picture>
+          </div>
+        </div>
+        <div class=" col-sm-6 col-md-4 col-lg-2">
+          <div class="logo-airbnb">
+            <picture>
+              <img src="https://www.upwork.com/static/assets/Brontes/7814396/img/airbnb.b562d93.svg"
+                alt="Airbnb works with Upwork to post more than 10,000 projects on Upwork.">
+            </picture>
+          </div>
+        </div>
+        <div class=" col-sm-6 col-md-4 col-lg-2">
+          <div class="logo-ge">
+            <picture>
+              <img src="https://www.upwork.com/static/assets/Brontes/7814396/img/ge.e4f1cde.svg"
+                alt="GE saves time and money to post more jobs on Upwork than any other platform.">
+            </picture>
+          </div>
+        </div>
+        <div class=" col-sm-6 col-md-4 col-lg-2">
+          <div class="logo-automatic">
+            <picture>
+              <img src="https://www.upwork.com/static/assets/Brontes/7814396/img/automatic.6156771.svg"
+                alt="Automatic worked with Upwork to build their remote-first company with top talent found on Upwork.">
+            </picture>
+          </div>
+        </div>
+        <div class=" col-sm-6 col-md-4 col-lg-2">
+          <div class="logo-bissell">
+            <picture>
+              <img src="https://www.upwork.com/static/assets/Brontes/7814396/img/bissell.5f96ccb.svg"
+                alt="Bissell works with Upwork as a staffing alternative to their hiring process.">
+            </picture>
+          </div>
+        </div>
+        <div class=" col-sm-6 col-md-4 col-lg-2">
+          <div class="logo-coty">
+            <picture>
+              <img src="https://www.upwork.com/static/assets/Brontes/7814396/img/coty.355301a.svg"
+                alt="COTY worked with Upwork to evolve their contingent workforce management.">
+            </picture>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    </div>
+  </section> -->
+
+  <div class="container-fluid secondDiv">
+    <div>
+      <h4><b>Trusted by 5M+ businesses</b></h4>
+    </div>
+    <div class="row">
+      <div class="col-4 col-lg-2   imgMicro">
+        <img src="https://www.upwork.com/static/assets/Brontes/7814396/img/microsoft.a4ac95d.svg">
+      </div>
+      <div class="col-lg-2 d-none d-lg-block imgAir">
+        <img src="https://www.upwork.com/static/assets/Brontes/7814396/img/airbnb.b562d93.svg">
+      </div>
+      <div class="col-4 col-lg-2 imgEg">
+        <img src="https://www.upwork.com/static/assets/Brontes/7814396/img/ge.e4f1cde.svg">
+      </div>
+      <div class="col-lg-2 d-none d-lg-block  imgAuto">
+        <img src="https://www.upwork.com/static/assets/Brontes/7814396/img/automatic.6156771.svg">
+      </div>
+      <div class="col-4 col-lg-2 imgBissel">
+        <img src="https://www.upwork.com/static/assets/Brontes/7814396/img/bissell.5f96ccb.svg">
+      </div>
+      <div class="col-lg-2 d-none   d-lg-block">
+        <img src="https://www.upwork.com/static/assets/Brontes/7814396/img/coty.355301a.svg">
+      </div>
+    </div>
+  </div>
+
+
+  <div>
+    <section class="fescue-use-cases-section py-5 vs-bg-gray-lightest my-5">
+      <div class="container py-4">
+        <div class="row align-items-center">
+          <div class="col-md-12 col-lg-3">
+            <h2 class="title h3 mb-4 mb-sm-30 mb-xl-0 bigger-title-xs">
+              Hire for any scope
+            </h2>
+          </div>
+          <div class="col-md-12 col-lg-9">
+            <div class="use-cases-content vs-bg-white">
+              <div class="row m-md-0">
+                <div class="col-md-4 my-md-30">
+                  <div class="mx-md-5 px-md-10 py-3">
+                    <h4 role="none" class="item-title mb-3">
+                      Complex project
+                    </h4>
+                    <p class="m-0">
+                      Find specialized experts and agencies for large projects.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-4 my-md-30">
+                  <div class="mx-md-5 px-md-10 py-3">
+                    <h4 role="none" class="item-title mb-3">
+                      Longer-term contract
+                    </h4>
+                    <p class="m-0">
+                      Expand your team with a skilled resource.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-4 my-md-30">
+                  <div class="mx-md-5 px-md-10 py-3">
+                    <h4 role="none" class="item-title mb-3">
+                      Short term
+                    </h4>
+                    <p class="m-0">
+                      Build a pool of diverse experts for one-off tasks.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div>
+    <section class="hiw-section py-5 my-5 py-md-50 vs-bg-white">
+      <div class="container numbered-list pb-4 pb-md-0 pb-xl-30">
+        <h2 class=" text-center mb-5 mb-md-3 mt-4 mt-sm-0 pb-md-4">
+          How it works
+        </h2>
+        <div class="row">
+          <div class="hiw-list col-12 mt-4 mt-md-auto">
+            <div class="row">
+              <div class="col-12 col-md-6 col-xl-3 hiw-item">
+                <div class="row">
+                  <div class="
+                      hiw-image d-none d-md-block text-center
+                      col-md-4 col-lg-3 col-lg-offset-1 col-xl-12 col-xl-offset-0 p-lg-0
+                    "><img src="https://www.upwork.com/static/assets/Brontes/7814396/img/find.9449b48.svg"
+                      class="img-responsive d-none d-md-inline-block default-icon w-50 mb-4"></div>
+                  <div class="col-md-8 col-lg-7 col-xl-12 text-center">
+                    <h3 class="h4 hiw-title mb-3 mt-auto mt-xl-4">
+                      <span class="d-inline-block d-xl-none hiw-title-index">
+                        1.
+                      </span>
+                      <span>Post a job (it’s free)</span>
+                    </h3>
+                    <p class="hiw-text d-none d-lg-block m-0">
+                      Tell us about your project. Upwork connects you with top talent and agencies around the world, or
+                      near you.
+                    </p>
+                    <p class="hiw-text d-lg-none m-0 pl-4 pl-md-0">
+                      Tell us about your project. Upwork connects you with top talent and agencies around the world, or
+                      near you.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-xl-3 hiw-item">
+                <div class="row">
+                  <div class="
+                      hiw-image d-none d-md-block text-center
+                      col-md-4 col-lg-3 col-lg-offset-1 col-xl-12 col-xl-offset-0 p-lg-0
+                    ">
+                    <img src="https://www.upwork.com/static/assets/Brontes/7814396/img/hire.f1d0563.svg"
+                      class="img-responsive d-none d-md-inline-block default-icon w-50 mb-4">
+                  </div>
+                  <div class="col-md-8 col-lg-7 col-xl-12  text-center">
+                    <h3 class="h4 hiw-title mb-3 mt-auto mt-xl-4">
+                      <span class="d-inline-block d-xl-none hiw-title-index">
+                        2.
+                      </span>
+                      <span>Bids come to you</span>
+                    </h3>
+                    <p class="hiw-text d-none d-lg-block m-0">
+                      Get qualified proposals within 24 hours. Compare bids, reviews, and prior work. Interview
+                      favorites
+                      and hire the best fit.
+                    </p>
+                    <p class="hiw-text d-lg-none m-0 pl-4 pl-md-0">
+                      Get qualified proposals within 24 hours. Compare bids, reviews, and prior work. Interview and
+                      hire.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-xl-3 hiw-item">
+                <div class="row">
+                  <div class="
+                      hiw-image d-none d-md-block text-center
+                      col-md-4 col-lg-3 col-lg-offset-1 col-xl-12 col-xl-offset-0 p-lg-0
+                    ">
+                    <img src="https://www.upwork.com/static/assets/Brontes/7814396/img/work.e0cdb7b.svg" alt=""
+                      class="img-responsive d-none d-md-inline-block default-icon w-50 mb-4">
+                  </div>
+                  <div class="col-md-8 col-lg-7 col-xl-12 text-center">
+                    <h3 class="h4 hiw-title mb-3 mt-auto mt-xl-4">
+                      <span class="d-inline-block d-xl-none hiw-title-index">
+                        3.
+                      </span>
+                      <span>Collaborate easily</span>
+                    </h3>
+                    <p class="hiw-text d-none d-lg-block m-0">
+                      Use Upwork to chat or video call, share files, and track project milestones from your desktop or
+                      mobile.
+                    </p>
+                    <p class="hiw-text d-lg-none m-0 pl-4 pl-md-0">
+                      Use Upwork to chat or video call, share files, and track project milestones from your desktop or
+                      mobile.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-xl-3 hiw-item">
+                <div class="row">
+                  <div class="
+                      hiw-image d-none d-md-block text-center
+                      col-md-4 col-lg-3 col-lg-offset-1 col-xl-12 col-xl-offset-0 p-lg-0
+                    ">
+                    <img src="https://www.upwork.com/static/assets/Brontes/7814396/img/pay.8951f52.svg" alt=""
+                      class="img-responsive d-none d-md-inline-block default-icon w-50 mb-4">
+                  </div>
+                  <div class="col-md-8 col-lg-7 col-xl-12 text-center">
+                    <h3 class="h4 hiw-title mb-3 mt-auto mt-xl-4">
+                      <span class="d-inline-block d-xl-none hiw-title-index">
+                        4.
+                      </span>
+                      <span>Payment simplified</span>
+                    </h3>
+                    <p class="hiw-text d-none d-lg-block m-0">
+                      Pay hourly or fixed-price and receive invoices through Upwork. Pay for work you authorize.
+                    </p>
+                    <p class="hiw-text d-lg-none m-0 pl-4 pl-md-0">
+                      Pay hourly or fixed-price and receive invoices through Upwork. Pay for work you authorize.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div>
+    <section class="pricing-table-section vs-bg-gray-lightest my-5 py-5">
+      <div class="container mt-30 mt-md-50 mb-45 mb-md-70 mb-xl-100">
+        <div class="row">
+          <h2 class="col-md-12 py-3 mb-3 text-center">
+            Choose the offering that works best for you
+          </h2>
+        </div>
+        <p class="text-center vs-color-gray mb-5">
+          All options include access to Upwork’s talent pool of quality talent and agencies.
+        </p>
+        <div class="row">
+          <div class="pricing-table-col text-center col-lg-4 col-12 mb-3">
+            <div class="up-card vs-height-100 d-flex vs-flex-column m-0 p-0">
+              <div class="py-4">
+                <h3 class="pt-3 mb-3">
+                  Basic
+                </h3>
+                <p class="mb-0 d-block d-md-none">
+                  Free to post and sign up. Find and hire talent quickly, collaborate easily, and make hassle-free
+                  payments.
+                </p>
+                <a href="/signup/?accountType=client" tabindex="0"
+                  class="up-btn up-btn-primary btn btn-success tariff-cta-btn mr-0 mb-4 mt-4">
+                  Select Basic
+                </a>
+                <p class="tariff-price nowrap m-0"><span class="price">Free</span><small class="vs-color-gray">*</small>
+                </p>
+              </div>
+              <div collapsed="true" tabindex="-1" class="up-c-collapse b-block" style="padding-bottom: 168px;">
+                <div cy-content="" class="text-left p-4">
+                  <p class="feature d-block ml-4 pl-5 mb-4">
+                  <div class="text-success m-0 up-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"
+                      aria-hidden="true" role="img">
+                      <polygon points="11.505 1 14 2.634 5.798 14 0 9.641 1.874 7.377 5.135 9.827"></polygon>
+                    </svg></div>
+                  Verified work history and reviews
+                  </p>
+                  <p class="feature d-block ml-4 pl-5 mb-4">
+                  <div class="text-success m-0 up-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"
+                      aria-hidden="true" role="img">
+                      <polygon points="11.505 1 14 2.634 5.798 14 0 9.641 1.874 7.377 5.135 9.827"></polygon>
+                    </svg></div>
+                  Unlimited proposals
+                  </p>
+                  <p class="feature d-block ml-4 pl-5 mb-0 mb-md-3 pb-md-10">
+                  <div class="text-success m-0 up-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"
+                      aria-hidden="true" role="img">
+                      <polygon points="11.505 1 14 2.634 5.798 14 0 9.641 1.874 7.377 5.135 9.827"></polygon>
+                    </svg></div>
+                  Built-in collaboration tools and easy payments
+                  </p>
+                </div>
+              </div>
+              <button
+                class="up-btn up-btn-link d-flex align-items-center justify-content-center vs-width-100 d-md-none py-4 mr-0 mb-0">
+                <div class="ml-0 mr-10 up-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"
+                    aria-hidden="true" role="img">
+                    <polygon points="7 12 14 4.567 12.524 3 7 8.866 1.476 3 0 4.567"></polygon>
+                  </svg></div> <span>See features</span>
+              </button>
+            </div>
+          </div>
+          <div class="pricing-table-col text-center col-lg-4 col-12 mb-3">
+            <div class="up-card vs-height-100 d-flex vs-flex-column m-0 p-0">
+              <div class="py-4">
+                <h3 class="pt-3 mb-3">
+                  Plus
+                </h3>
+                <p class="separator center-block my-4 vs-bg-gray-light d-block d-md-none"></p>
+                <p class="mb-0 d-block d-md-none">
+                  Work with on-demand account managers to attract the specific talent that’s right for your business.
+                </p> <a href="/signup/?upwork-plus=1" tabindex="0"
+                  class="up-btn up-btn-primary btn btn-success tariff-cta-btn mr-0 mb-4 mt-4">
+                  Select Plus
+                </a>
+                <p class="tariff-price nowrap m-0"><span class="price">$49.99</span><small
+                    class="vs-color-gray">/month*</small></p>
+              </div>
+              <div tabindex="-1" class="up-c-collapse b-block">
+                <div cy-content="" class="text-left p-4"><span
+                    class="feature d-block mb-4 text-center vs-color-gray">Everything in <b
+                      class="vs-color-text">Basic</b>, and:</span>
+                  <p class="feature d-block ml-4 pl-5 mb-4">
+                  <div class="text-success m-0 up-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"
+                      aria-hidden="true" role="img">
+                      <polygon points="11.505 1 14 2.634 5.798 14 0 9.641 1.874 7.377 5.135 9.827"></polygon>
+                    </svg></div>
+                  Dedicated account managers to help you find and hire quality talent fast
+                  </p>
+                  <p class="feature d-block ml-4 pl-5 mb-4">
+                  <div class="text-success m-0 up-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"
+                      aria-hidden="true" role="img">
+                      <polygon points="11.505 1 14 2.634 5.798 14 0 9.641 1.874 7.377 5.135 9.827"></polygon>
+                    </svg></div>
+                  Project tracking and collaboration tools for teams
+                  </p>
+                  <p class="feature d-block ml-4 pl-5 mb-0 mb-md-3 pb-md-10">
+                  <div class="text-success m-0 up-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"
+                      aria-hidden="true" role="img">
+                      <polygon points="11.505 1 14 2.634 5.798 14 0 9.641 1.874 7.377 5.135 9.827"></polygon>
+                    </svg></div>
+                  Tailored search results featuring Top Rated and Rising Talent
+                  </p> <a data-qa="plus-learn-more" href="/i/plus/" class="d-block text-success ml-4 mt-10 pl-5 pt-5">
+                    Learn more
+                  </a>
+                </div>
+              </div> <button data-qa="features-chevron-mobile"
+                class="up-btn up-btn-link d-flex align-items-center justify-content-center vs-width-100 d-md-none py-4 mr-0 mb-0">
+                <div class="ml-0 mr-10 up-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"
+                    aria-hidden="true" role="img">
+                    <polygon points="7 3 0 10.433 1.476 12 7 6.134 12.524 12 14 10.433"></polygon>
+                  </svg></div> <span>Hide features</span>
+              </button>
+            </div>
+          </div>
+          <div class="pricing-table-col text-center col-lg-4 col-12 mb-3">
+            <div class="up-card vs-height-100 d-flex vs-flex-column m-0 p-0">
+              <div class="py-4">
+                <h3 data-qa="tariff-name" class="pt-3 mb-3">
+                  Enterprise
+                </h3>
+                <p class="separator center-block my-4 vs-bg-gray-light d-block d-md-none"></p>
+                <p class="mb-0 d-block d-md-none">
+                  Configure the solution to your organization’s needs and reduce risk through compliance services.
+                </p> <a href="/enterprise/resources/contact-us/schedule-demo/" data-qa="tariff-cta" tabindex="0"
+                  class="up-btn up-btn-primary btn btn-success tariff-cta-btn mr-0 mb-4 mt-4">
+                  Contact Us
+                </a>
+                <p data-qa="tariff-price" class="tariff-price nowrap m-0"><small class="vs-color-gray">Price varies -
+                    contact us for a demo</small></p>
+              </div>
+              <div collapsed="true" tabindex="-1" class="up-c-collapse b-block">
+                <div cy-content="" class="text-left p-4"><span data-qa="features-title"
+                    class="feature d-block mb-4 text-center vs-color-gray">Everything in <b
+                      class="vs-color-text">Plus</b>, and:</span>
+                  <p class="feature d-block ml-4 pl-5 mb-4">
+                  <div class="text-success m-0 up-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"
+                      aria-hidden="true" role="img">
+                      <polygon points="11.505 1 14 2.634 5.798 14 0 9.641 1.874 7.377 5.135 9.827"></polygon>
+                    </svg></div>
+                  Custom configurable contracting and onboarding process
+                  </p>
+                  <p class="feature d-block ml-4 pl-5 mb-4">
+                  <div class="text-success m-0 up-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"
+                      aria-hidden="true" role="img">
+                      <polygon points="11.505 1 14 2.634 5.798 14 0 9.641 1.874 7.377 5.135 9.827"></polygon>
+                    </svg></div>
+                  Worker classification compliance services
+                  </p>
+                  <p class="feature d-block ml-4 pl-5 mb-0 mb-md-3 pb-md-10">
+                  <div class="text-success m-0 up-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"
+                      aria-hidden="true" role="img">
+                      <polygon points="11.505 1 14 2.634 5.798 14 0 9.641 1.874 7.377 5.135 9.827"></polygon>
+                    </svg></div>
+                  Project-based or managed solutions, and dedicated account executive
+                  </p> <a href="/enterprise/" class="d-block text-success ml-4 mt-10 pl-5 pt-5">
+                    Learn more
+                  </a>
+                </div>
+              </div>
+              <button data-qa="features-chevron-mobile"
+                class="up-btn up-btn-link d-flex align-items-center justify-content-center vs-width-100 d-md-none py-4 mr-0 mb-0">
+                <div class="ml-0 mr-10 up-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"
+                    aria-hidden="true" role="img">
+                    <polygon points="7 12 14 4.567 12.524 3 7 8.866 1.476 3 0 4.567"></polygon>
+                  </svg></div> <span>See features</span>
+              </button>
+            </div>
+          </div>
+          <div
+            class="pricing-table-footer col-md-10 col-lg-8 col-xl-12 col-md-offset-1 col-lg-offset-2 col-xl-offset-0">
+            <small data-qa="footer-3-percent-fee">*3% payment processing and administration fee on all payments to
+              freelancers and agencies.</small>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="my-5">
+    <section class="clearly-rated-section d-flex justify-content-center py-30">
+      <div class="container py-lg-2">
+        <a href="https://www.clearlyrated.com/staffing/ca-usa/santa-clara-ca/upwork-santa-clara-ca" class="no-style">
+          <div class="content d-flex align-items-center justify-content-center text-center">
+            <h3 class="display-1 mb-0 nowrap vs-color-gray-2">
+              <span class="vertical-align-middle">Customers rate Upwork</span> <br class="d-md-none"> <span
+                class="mr-10 ml-md-10 vertical-align-middle vs-color-text"><span>4.6</span>/5
+              </span>
+              <img data-qa="rate-stars" src="https://www.upwork.com/static/assets/Brontes/7814396/img/stars.ecae04c.svg"
+                alt="" class="rating-stars my-10 my-md-0" />
+            </h3>
+            <h4 data-qa="reviews-text" class="display-3 mb-0 ml-md-10 nowrap vs-color-gray-2">
+              based on
+              <span class="vs-color-raw-sienna"><span>557,188</span> <span class="d-md-none d-lg-inline"> verified
+                </span>reviews
+              </span>
+            </h4>
+            <img data-qa="logo" src="https://www.upwork.com/static/assets/Brontes/7814396/img/logo.fd38857.svg" alt=""
+              class="logo ml-md-20" />
+          </div>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <div>
+    <section class="video-testimonial-section vs-bg-gray-logo py-3 py-md-4 py-xl-5">
+      <div class="container">
+        <div class="row align-items-center flex-reverse">
+          <div class="col-md-6 col-md-offset-1 mb-3 mb-md-2">
+            <section class="video-element vs-shadow-dark">
+              <div class="iframe-wrapper">
+                <iframe
+                  data-src="https://player.vimeo.com/video/154254456/?transparent=0&amp;color=6dda42&amp;title=0&amp;byline=0&amp;portrait=0"
+                  allow="fullscreen" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="allowfullscreen"
+                  src="https://player.vimeo.com/video/154254456/?transparent=0&amp;color=6dda42&amp;title=0&amp;byline=0&amp;portrait=0"
+                  frameborder="0">
+                </iframe>
+              </div>
+            </section>
+          </div>
+          <div class="col-md-5">
+            <h2 data-qa="title" class="vs-color-white display-1 mb-15 mb-md-20" style="color: #fff;">
+              Instapage saved $2.3M with Upwork
+            </h2>
+            <p data-qa="overview" class="overview-testimonial vs-color-gray-granite"><em>"Upwork took a lot of stress
+                off
+                of growing with minimal resources"</em>
+            </p>
+            <div data-qa="author" class="d-flex">
+              <div class="image-wrapper mr-15 mr-md-20">
+                <img data-qa="icon"
+                  src="https://www.upwork.com/static/assets/Brontes/7814396/img/tyson-avatar.a5754d7.png" alt="">
+              </div>
+              <div class="info vs-color-gray-granite"><small><strong data-qa="name">Tyson Quick</strong><br> <span
+                    data-qa="position">CEO and co-founder, Instapage</span></small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div>
+    <section class="links-list-section-wrapper">
+      <section class="links-list-section pt-3 mobile-toggle mt-md-2">
+        <div class="container">
+          <h2 class="h5 display-u2u mb-3 mb-md-3">
+            Top skills
+          </h2>
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-3 mb-2"><a href="/hire/android-developers/" title="Android Developer" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Android Developer
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/hire/bookkeepers/" title="Bookkeeper" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Bookkeeper
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/hire/content-writers/" title="Content Writer" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Content Writer
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/hire/copywriters/" title="Copywriter" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Copywriter
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/hire/customer-service-representatives/"
+                title="Customer Service Representative" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Customer Service Representative
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/hire/database-administrators/" title="Database Administrator"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Database Administrator
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/hire/data-scientists/" title="Data Scientist" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Data Scientist
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/hire/facebook-api-developers/" title="Facebook Developer"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Facebook Developer
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/hire/front-end-developers/" title="Front-End Developer" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Front-End Developer
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/hire/game-developers/" title="Game Developer" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Game Developer
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/graphic-designers/" title="Graphic Designer"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Graphic Designer
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/information-security-analysts/"
+                title="Information Security Analyst" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Information Security Analyst
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/ios-developers/" title="iOS Developer"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                iOS Developer
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/java-developers/" title="Java Developer"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Java Developer
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/javascript-developers/"
+                title="JavaScript Developer" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                JavaScript Developer
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/logo-designers/" title="Logo Designer"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Logo Designer
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/mobile-app-developers/"
+                title="Mobile App Developer" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Mobile App Developer
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/php-developers/" title="PHP Developer"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                PHP Developer
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/python-developers/" title="Python Developer"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Python Developer
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/resume-writers/" title="Resume Writer"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Resume Writer
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/sales-consultants/" title="Sales Consultant"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Sales Consultant
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/seo-experts/" title="SEO Expert" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                SEO Expert
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/social-media-managers/"
+                title="Social Media Manager" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Social Media Manager
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/software-developers/"
+                title="Software Developer" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Software Developer
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/software-engineers/" title="Software Engineer"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Software Engineer
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/technical-writers/" title="Technical Writer"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Technical Writer
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/ui-designers/" title="UI Designer"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                UI Designer
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/ux-designers/" title="UX Designer"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                UX Designer
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/virtual-assistants/" title="Virtual Assistant"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Virtual Assistant
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/web-designers/" title="Web Designer"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Web Designer
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/wordpress-developers/"
+                title="Wordpress Developer" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Wordpress Developer
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/writers/" title="Writer" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Writer
+              </a></div>
+          </div> <a data-qa="view-more" class="mt-5 show-more d-md-none vs-cursor-pointer mobile-toggle-link-handle">
+            Show more
+          </a>
+        </div>
+      </section>
+      <section data-qa-section="links_list" class="links-list-section pt-3 mobile-toggle mt-md-2">
+        <div class="container">
+          <h2 data-qa="h5" class="h5 display-u2u mb-2 mb-md-3">
+            Trending skills
+          </h2>
+          <div class="row">
+            <div class="col-md-3 mb-2"><a href="/hire/apple-uikit-framework-developers/" title="Apple UIKit"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Apple UIKit
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/hire/apple-xcode-freelancers/" title="Apple Xcode" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Apple Xcode
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/hire/articulate-storyline-freelancers/" title="Articulate storyline"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Articulate storyline
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/hire/atlassian-confluence-developers/" title="Atlassian Confluence"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Atlassian Confluence
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/hire/blockchain-developers" title="Blockchain" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Blockchain
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/hire/customer-retention-freelancers/" title="Customer retention"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Customer retention
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/hire/e-learning-freelancers/" title="eLearning" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                eLearning
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/hire/enterprise-architects/" title="Enterprise architecture"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Enterprise architecture
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/hire/gitlab-freelancers/" title="GitLab" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                GitLab
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/hire/golang-developers/" title="Go development" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Go development
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/google-app-engine-api-freelancers/"
+                title="Google App Engine API" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Google App Engine API
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/google-cloud-platform-freelancers/"
+                title="Google Cloud Platform" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Google Cloud Platform
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/nodejs-developers/" title="Node.js"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Node.js
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/product-photography-freelancers/"
+                title="Product photography" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Product photography
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/rapid-prototyping-freelancers/"
+                title="Rapid prototyping" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Rapid prototyping
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/risk-management-freelancers/"
+                title="Risk management" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Risk management
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/scala-developers/" title="Scala development"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Scala development
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/scorm-freelancers/" title="SCORM"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                SCORM
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/tensorflow-freelancers/" title="Tensorflow"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Tensorflow
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/volusion-freelancers/" title="Volusion"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Volusion
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/dropbox-api-developers/" title="Dropbox API"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Dropbox API
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/iphone-ui-designers/" title="iPhone UI design"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                iPhone UI design
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/genetic-algorithms-freelancers/"
+                title="Genetic algorithms" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Genetic algorithms
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/vue-js-developers/" title="Vue.js"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Vue.js
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/social-customer-service-freelancers/"
+                title="Social customer service" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Social customer service
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/hr-consultants/" title="HR consulting"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                HR consulting
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/oculus-rift-developers/" title="Oculus Rift"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Oculus Rift
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/microsoft-power-bi-freelancers/"
+                title="Microsoft Power BI" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Microsoft Power BI
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/proposal-writers/" title="Proposal writing"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Proposal writing
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/vuforia-freelancers/" title="Vuforia"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Vuforia
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/instructional-designers/"
+                title="Instructional design" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Instructional design
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/hire/react-js-developers/" title="React.js"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                React.js
+              </a></div>
+          </div> <a data-qa="view-more" class="mt-5 show-more d-md-none vs-cursor-pointer mobile-toggle-link-handle">
+            Show more
+          </a>
+          <div class="text-center py-5"><a data-qa="see-all-freelancers" href="/hire/"
+              class="up-btn up-btn-default shadow mt-20 mt-md-30 mr-0 mb-15 mb-2">
+              Browse All Skills
+            </a></div>
+        </div>
+      </section>
+      <section data-qa-section="links_list" class="links-list-section pt-3 mobile-toggle mt-md-2">
+        <div class="container">
+          <h2 data-qa="h5" class="h5 display-u2u mb-2 mb-md-3">
+            Top Skills in US
+          </h2>
+          <div class="row">
+            <div class="col-md-3 mb-2"><a href="/l/us/adobe-illustrator-experts/"
+                title="Adobe Illustrator Experts in US" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Adobe Illustrator Experts in US
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/l/us/adobe-photoshop-experts/" title="Adobe Photoshop Experts in US"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Adobe Photoshop Experts in US
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/l/us/article-writers/" title="Article Writers in US " data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Article Writers in US
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/l/us/blog-writers/" title="Blog Writers in US" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Blog Writers in US
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/l/us/content-writers/" title="Content Writers in US" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Content Writers in US
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/l/us/creative-writers/" title="Creative Writers in US" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Creative Writers in US
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/l/us/customer-service-representatives/"
+                title="Customer Service Representatives in US" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Customer Service Representatives in US
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/l/us/data-entry-specialists/" title="Data Entry Specialists in US"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Data Entry Specialists in US
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/l/us/editors/" title="Editors in US" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Editors in US
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/l/us/microsoft-excel-experts/" title="Excel Experts in US"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Excel Experts in US
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/l/us/graphic-designers/"
+                title="Graphic Designers in US" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Graphic Designers in US
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/l/us/html-developers/" title="HTML Developers in US"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                HTML Developers in US
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/l/us/html5-developers/"
+                title="HTML5 Developers in US" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                HTML5 Developers in US
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/l/us/javascript-developers/"
+                title="JavaScript Developers in US" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                JavaScript Developers in US
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/l/us/microsoft-word-experts/"
+                title="Microsoft Word Experts in US" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Microsoft Word Experts in US
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/l/us/microsoft-powerpoint-producers/"
+                title="PowerPoint Experts in US" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                PowerPoint Experts in US
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/l/us/social-media-consultants/"
+                title="Social Media Marketers in US" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Social Media Marketers in US
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/l/us/web-designers/" title="Web Designers in US"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Web Designers in US
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/l/us/wordpress-developers/"
+                title="WordPress Developers in US" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                WordPress Developers in US
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/l/us/writers/" title="Writers in US" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Writers in US
+              </a></div>
+          </div> <a data-qa="view-more" class="mt-5 show-more d-md-none vs-cursor-pointer mobile-toggle-link-handle">
+            Show more
+          </a>
+        </div>
+      </section>
+      <section data-qa-section="links_list" class="links-list-section pt-3 mobile-toggle mt-md-2">
+        <div class="container">
+          <h2 data-qa="h5" class="h5 display-u2u mb-2 mb-md-3">
+            Top Cities in US
+          </h2>
+          <div class="row">
+            <div class="col-md-3 mb-2"><a href="/l/us/freelancers-in-atlanta-ga/" title="Atlanta, GA Freelancers"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Atlanta, GA Freelancers
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/l/us/freelancers-in-austin-tx/" title="Austin, TX Freelancers"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Austin, TX Freelancers
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/l/us/freelancers-in-brooklyn-ny/" title="Brooklyn, NY Freelancers"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Brooklyn, NY Freelancers
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/l/us/freelancers-in-charlotte-nc/" title="Charlotte, NC Freelancers"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Charlotte, NC Freelancers
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/l/us/freelancers-in-chicago-il/" title="Chicago, IL Freelancers"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Chicago, IL Freelancers
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/l/us/freelancers-in-dallas-tx/" title="Dallas, TX Freelancers"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Dallas, TX Freelancers
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/l/us/freelancers-in-denver-co/" title="Denver, CO Freelancers"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Denver, CO Freelancers
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/l/us/freelancers-in-houston-tx/" title="Houston, TX Freelancers"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Houston, TX Freelancers
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/l/us/freelancers-in-las-vegas-nv/" title="Las Vegas, NV Freelancers"
+                data-qa="link" class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Las Vegas, NV Freelancers
+              </a></div>
+            <div class="col-md-3 mb-2"><a href="/l/us/freelancers-in-los-angeles-ca/"
+                title="Los Angeles, CA Freelancers" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Los Angeles, CA Freelancers
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/l/us/freelancers-in-miami-fl/"
+                title="Miami, FL Freelancers" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Miami, FL Freelancers
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/l/us/freelancers-in-new-york-ny/"
+                title="New York, NY Freelancers" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                New York, NY Freelancers
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/l/us/freelancers-in-orlando-fl/"
+                title="Orlando, FL Freelancers" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Orlando, FL Freelancers
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/l/us/freelancers-in-philadelphia-pa/"
+                title="Philadelphia, PA Freelancers" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Philadelphia, PA Freelancers
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/l/us/freelancers-in-phoenix-az/"
+                title="Phoenix, AZ Freelancers" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Phoenix, AZ Freelancers
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/l/us/freelancers-in-portland-or/"
+                title="Portland, OR Freelancers" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Portland, OR Freelancers
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/l/us/freelancers-in-san-diego-ca/"
+                title="San Diego, CA Freelancers" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                San Diego, CA Freelancers
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/l/us/freelancers-in-san-francisco-ca/"
+                title="San Francisco, CA Freelancers" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                San Francisco, CA Freelancers
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/l/us/freelancers-in-san-jose-ca/"
+                title="San Jose, CA Freelancers" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                San Jose, CA Freelancers
+              </a></div>
+            <div class="col-md-3 mb-2 mobile-toggle-link"><a href="/l/us/freelancers-in-seattle-wa/"
+                title="Seattle, WA Freelancers" data-qa="link"
+                class="vs-link-text vs-color-text vs-max-width-100 ellipsis d-block pull-left">
+                Seattle, WA Freelancers
+              </a></div>
+          </div> <a data-qa="view-more" class="mt-5 show-more d-md-none vs-cursor-pointer mobile-toggle-link-handle">
+            Show more
+          </a>
+          <div class="text-center mb-2 mb-md-5  py-5"><a data-qa="see-us-freelancers" href="/l/us/"
+              class="up-btn up-btn-default mt-20 mt-md-30 mr-0 mb-0">
+              Browse US Freelancers
+            </a></div>
+        </div>
+      </section>
+    </section>
+  </div>
+
+  <div>
+    <section class="payoff-section pb-5 pb-md-5">
+      <div class="container">
+        <div class="up-card m-0">
+          <div class="row">
+            <div class="col-lg-10 d-flex justify-content-center col-md-12">
+              <div class="d-md-flex d-block align-items-center justify-space-between py-1 py-xl-0">
+                <div class="pb-5 pb-md-0 mb-1 mb-md-0">
+                  <h4 class="text-success  mb-0 pb-0">
+                    For pre-vetted talent, compliance services and more
+                  </h4>
+                  <h2 class="payoff-title display-rebrand mb-0">
+                    Try Upwork Enterprise
+                  </h2>
+                </div> <a href="/enterprise/contact-us" class="up-btn btn-success mb-0 mr-0"
+                  style="    margin-left: 159px;">
+                  Request a Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div>
+    <section class="payroll-footer-link-section vs-bg-midnight-blue">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="text-center py-5 my-1 py-md-2 my-md-0 payroll-link">
+              <small data-qa="payroll-link-text" class="vs-color-gray-light">
+                Looking to hire for long-term or full-time assignments? See how
+                <a data-qa="payroll-link-link" href="/i/payroll-client/" target="_blank"
+                  class="vs-color-gray-light"><u>Upwork Payroll</u></a> simplifies admin.
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div>
+    <footer class="footer py-4" style="background-color: #1d4354;">
+      <div class="sr-only">
+        Footer navigation
+      </div>
+      <div class="container">
+        <div class="footer-links">
+          <div class="row">
+            <div class="col-md-4 col-xl-3 col-xl-offset-1">
+              <div class="footer-toggle">
+                <div role="heading" aria-level="3" class="mb-0 text-uppercase visitor-accordion-toggle column-header">
+                  Company
+                  <!---->
+                </div>
+                <div class="visitor-accordion-content d-md-block d-none">
+                  <ul class="list-unstyled">
+                    <li><a href="/about/">About Us</a></li>
+                    <li><a href="https://investors.upwork.com/">Investor Relations</a></li>
+                    <li><a href="https://careers.upwork.com">Careers</a></li>
+                    <li><a href="/ppc/foundation/">Upwork Foundation</a></li>
+                    <li><a href="/press">Press</a></li>
+                    <li><a href="/trust-and-safety/security/">Trust, Safety &amp; Security</a></li>
+                    <li><a href="/legal">Terms of Service</a></li>
+                    <li><a href="/legal#privacy">Privacy Policy</a></li>
+                    <li><a href="/legal#accessibility">Accessibility</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-xl-3 col-xl-offset-1">
+              <div class="footer-toggle">
+                <div role="heading" aria-level="3" class="mb-0 text-uppercase visitor-accordion-toggle column-header">
+                  Resources
+                  <!---->
+                </div>
+                <div class="visitor-accordion-content d-md-block d-none">
+                  <ul class="list-unstyled">
+                    <li><a href="/resources">Resources</a></li>
+                    <li><a href="https://support.upwork.com/hc/en-us">Customer Support</a></li>
+                    <li><a href="/customer-success">Customer Stories</a></li>
+                    <li><a href="/i/business-resources/">Business Resources</a></li>
+                    <li><a href="/i/payroll-client/">Payroll Services</a></li>
+                    <li><a href="/reviews/">Upwork Reviews</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-xl-3 col-xl-offset-1">
+              <div class="footer-toggle">
+                <div role="heading" aria-level="3" class="mb-0 text-uppercase visitor-accordion-toggle column-header">
+                  Browse
+                  <!---->
+                </div>
+                <div class="visitor-accordion-content d-md-block d-none">
+                  <ul class="list-unstyled">
+                    <li><a href="/hire/">Freelancers by Skill</a></li>
+                    <li><a href="/l/us/">Freelancers in USA</a></li>
+                    <li><a href="/l/gb/">Freelancers in UK</a></li>
+                    <li><a href="/l/ca/">Freelancers in Canada</a></li>
+                    <li><a href="/l/au/">Freelancers in Australia</a></li>
+                    <li><a href="/freelance-jobs/united-states/">Jobs in USA</a></li>
+                    <li><a href="/freelance-jobs/">Find Jobs</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="up-footer-social">
+          <div class="up-footer-social-icons">
+            <div role="heading" aria-level="3" class="up-footer-social-header">
+              Follow us
+            </div>
+            <ul class="up-footer-social-list">
+              <li class="up-footer-social-list-item"><a href="https://www.facebook.com/upwork"
+                  title="Visit Upwork on Facebook" target="_blank" rel="noopener noreferrer"
+                  class="up-footer-social-list-link"><span class="sr-only">Visit Upwork on Facebook</span>
+                  <div class="up-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" aria-hidden="true"
+                      role="img">
+                      <path
+                        d="M10.92 2.24H8.75c-.28 0-.63.07-.63.56v2.24h2.8v2.24h-2.8V14H5.88V7.28h-2.8V5.04h2.8V3.08C5.88 1.05 6.86 0 8.75 0h2.17v2.24z">
+                      </path>
+                    </svg></div>
+                </a></li>
+              <li class="up-footer-social-list-item"><a href="https://www.linkedin.com/company/upwork"
+                  title="Read Upwork company news on LinkedIn" target="_blank" rel="noopener noreferrer"
+                  class="up-footer-social-list-link"><span class="sr-only">Read Upwork company news on LinkedIn</span>
+                  <div class="up-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" aria-hidden="true"
+                      role="img">
+                      <path
+                        d="M3.08 13.93H.07V4.27h3.01v9.66zM1.54 3.08C.63 3.08 0 2.45 0 1.61S.63.14 1.61.14c.98 0 1.54.63 1.54 1.47s-.56 1.47-1.61 1.47zM14 13.93h-3.01V8.61c0-1.26-.42-2.1-1.54-2.1-.84 0-1.33.56-1.54 1.12-.07.21-.07.49-.07.77v5.53H4.83V7.35c0-1.19-.07-2.17-.07-3.08h2.59l.14 1.33h.07c.42-.63 1.33-1.54 2.94-1.54 1.96 0 3.43 1.33 3.43 4.13v5.74H14z">
+                      </path>
+                    </svg></div>
+                </a></li>
+              <li class="up-footer-social-list-item"><a href="https://twitter.com/Upwork"
+                  title="Follow @Upwork on Twitter" target="_blank" rel="noopener noreferrer"
+                  class="up-footer-social-list-link"><span class="sr-only">Follow @Upwork on Twitter</span>
+                  <div class="up-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" aria-hidden="true"
+                      role="img">
+                      <path
+                        d="M12.6 4.13v.35c0 3.78-2.87 8.19-8.19 8.19-1.61 0-3.15-.49-4.41-1.26.21 0 .49.07.7.07 1.33 0 2.59-.49 3.57-1.26-1.26 0-2.31-.84-2.66-1.96.21 0 .35.07.56.07.28 0 .56 0 .77-.07C1.61 7.98.7 6.86.7 5.46v-.07c0 .21.77.35 1.26.35C1.19 5.25.63 4.34.63 3.36c0-.56.14-1.05.42-1.47C2.45 3.64 4.55 4.76 7 4.9c-.14-.28-.21-.49-.21-.7 0-1.61 1.26-2.87 2.87-2.87.84 0 1.54.35 2.1.91.63-.14 1.26-.35 1.82-.7-.21.7-.7 1.26-1.26 1.61.56-.07 1.12-.21 1.68-.42-.42.49-.84.98-1.4 1.4z">
+                      </path>
+                    </svg></div>
+                </a></li>
+              <li class="up-footer-social-list-item"><a href="https://www.youtube.com/channel/UCvxGFOnwUBDHHcxuPqhe4CQ"
+                  title="Watch Upwork videos on YouTube" target="_blank" rel="noopener noreferrer"
+                  class="up-footer-social-list-link"><span class="sr-only">Watch Upwork videos on YouTube</span>
+                  <div class="up-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" aria-hidden="true"
+                      role="img">
+                      <path
+                        d="M13.707 3.608a1.76 1.76 0 00-1.237-1.246C11.379 2.068 7 2.068 7 2.068s-4.378 0-5.47.294A1.764 1.764 0 00.292 3.608C0 4.707 0 7 0 7s0 2.293.292 3.392a1.76 1.76 0 001.238 1.245c1.092.295 5.47.295 5.47.295s4.378 0 5.469-.295a1.755 1.755 0 001.237-1.245C14 9.293 14 7 14 7s0-2.293-.293-3.392zM5.568 9.082V4.918L9.228 7l-3.66 2.082z">
+                      </path>
+                    </svg></div>
+                </a></li>
+              <li class="up-footer-social-list-item"><a href="https://www.instagram.com/upworkinc/"
+                  title="Follow Upwork on Instagram" target="_blank" rel="noopener noreferrer"
+                  class="up-footer-social-list-link"><span class="sr-only">Follow Upwork on Instagram</span>
+                  <div class="up-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" aria-hidden="true"
+                      role="img">
+                      <path
+                        d="M7 1.263c1.868 0 2.09.007 2.828.04.682.032 1.053.146 1.3.242.326.127.559.278.804.523s.396.478.523.805c.096.246.21.617.241 1.3.034.737.04.958.04 2.827 0 1.868-.006 2.09-.04 2.828-.031.682-.145 1.053-.24 1.3-.128.326-.28.559-.524.804a2.168 2.168 0 01-.805.523c-.247.096-.617.21-1.3.241-.737.034-.958.04-2.827.04s-2.09-.006-2.828-.04c-.682-.031-1.052-.145-1.3-.24a2.168 2.168 0 01-.804-.524 2.168 2.168 0 01-.523-.805c-.096-.247-.21-.617-.241-1.3-.034-.737-.04-.959-.04-2.827 0-1.869.006-2.09.04-2.828.031-.682.145-1.052.24-1.3.128-.326.28-.559.524-.804.245-.245.478-.396.805-.523.246-.096.617-.21 1.3-.241.737-.034.958-.04 2.827-.04M7 .001c-1.9 0-2.139.008-2.885.042C3.37.078 2.86.197 2.416.37a3.43 3.43 0 00-1.24.807 3.43 3.43 0 00-.806 1.24C.197 2.86.078 3.37.044 4.114.01 4.86.002 5.099.002 7c0 1.9.008 2.139.042 2.885.034.745.153 1.254.326 1.699.178.46.418.85.807 1.24.389.388.779.628 1.24.806.444.173.953.292 1.698.326.746.034.984.042 2.885.042 1.9 0 2.139-.008 2.885-.042.745-.034 1.254-.153 1.699-.326a3.43 3.43 0 001.24-.807 3.43 3.43 0 00.806-1.24c.173-.444.292-.953.326-1.698.034-.746.042-.985.042-2.885s-.008-2.139-.042-2.885c-.034-.745-.153-1.254-.326-1.699a3.43 3.43 0 00-.807-1.24 3.43 3.43 0 00-1.24-.806C11.14.197 10.63.078 9.886.044 9.14.01 8.9.002 7 .002">
+                      </path>
+                      <path
+                        d="M7 3.407a3.593 3.593 0 100 7.186 3.593 3.593 0 000-7.186zm0 5.926a2.333 2.333 0 110-4.666 2.333 2.333 0 010 4.666zm4.575-6.068a.84.84 0 11-1.68 0 .84.84 0 011.68 0">
+                      </path>
+                    </svg></div>
+                </a></li>
+            </ul>
+          </div>
+          <div class="up-footer-social-icons up-footer-download">
+            <div role="heading" aria-level="3" class="up-footer-social-header">
+              Mobile app
+            </div>
+            <ul class="up-footer-social-list">
+              <li class="up-footer-social-list-item"><a
+                  href="https://apps.apple.com/us/developer/upwork-global-inc/id329377609"
+                  title="Download Upwork app from iTunes" target="_blank" rel="noopener noreferrer"
+                  class="up-footer-social-list-link"><span class="sr-only">Download Upwork app from iTunes</span>
+                  <div class="up-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" aria-hidden="true"
+                      role="img">
+                      <path
+                        d="M13.017 10.271c-.329.729-.486 1.054-.91 1.698-.59.9-1.423 2.02-2.455 2.029-.918.008-1.153-.597-2.397-.59-1.244.007-1.504.6-2.42.592-1.033-.01-1.822-1.02-2.413-1.92C.77 9.566.597 6.614 1.616 5.046 2.341 3.931 3.483 3.28 4.557 3.28c1.094 0 1.78.599 2.685.599.877 0 1.412-.6 2.676-.6.956 0 1.969.52 2.69 1.419-2.364 1.296-1.98 4.672.41 5.574z">
+                      </path>
+                      <path
+                        d="M8.959 2.273C9.418 1.683 9.767.85 9.64 0 8.89.052 8.013.53 7.5 1.151c-.466.565-.85 1.403-.7 2.217.82.026 1.667-.464 2.159-1.095z">
+                      </path>
+                    </svg></div>
+                </a></li>
+              <li class="up-footer-social-list-item"><a
+                  href="https://play.google.com/store/apps/dev?id=8802639270489632480"
+                  title="Download Upwork app from Google Play" target="_blank" rel="noopener noreferrer"
+                  class="up-footer-social-list-link"><span class="sr-only">Download Upwork app from Google Play</span>
+                  <div class="up-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" aria-hidden="true"
+                      role="img">
+                      <path
+                        d="M3.996 11.095h.61v2.034c0 .464.426.871.914.871.488 0 .915-.407.915-.871v-2.034h1.22v2.034c0 .464.427.871.915.871.488 0 .915-.407.915-.871v-2.034h.61c.366 0 .61-.232.61-.58l-.001-5.98H3.386v5.98c0 .348.244.58.61.58zM2.079 4.381c-.418 0-.784.439-.784.94v4.392c0 .502.366.941.784.941.418 0 .784-.439.784-.94V5.321c0-.502-.366-.941-.784-.941zm9.148.94v4.392c0 .502.366.941.785.941.418 0 .784-.439.784-.94V5.321c0-.502-.366-.941-.784-.941-.419 0-.785.439-.785.94zM9.973.51a.272.272 0 000-.407.305.305 0 00-.427 0L8.63.974C8.204.683 7.655.567 7.045.567a3.78 3.78 0 00-1.647.349L4.545.044a.704.704 0 00-.488 0 .614.614 0 000 .465l.793.755c-.854.64-1.464 1.628-1.464 2.768h7.319A3.31 3.31 0 009.18 1.264L9.973.51zM6.068 3.06H5.029V2.016h1.039V3.06zm1.985 0V2.016h1.038V3.06H8.053z">
+                      </path>
+                    </svg></div>
+                </a></li>
+            </ul>
+          </div>
+        </div>
+        <p class="up-footer-visitor-copyright"><small>© 2015 - 2020 Upwork® Global Inc.</small></p>
+      </div>
+    </footer>
+  </div>
+
+
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
