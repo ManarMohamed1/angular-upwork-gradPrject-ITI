@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="continue-signUp1.css">
+<title>continue-signUp1</title>
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/f920b6a455.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div id="firstDiv">
+        <div class="container" id="blueForm">
+
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand" href="index.html">
+                    <img id="imgLogo" src="upwork.png">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                     <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <p class=" nav-link insideLoginWord">Already have an account?</p>
+                            <a class="nav-link " id="loginWord" href="signUp.html" onmousemove="this.parentElement.style.color='#378b37'"> Log In </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+
+            <div class="row">
+                <div class="col-2 d-xl-block d-lg-none d-sm-none d-md-none d-none "></div>
+                <div class="col-xl-8 col-12 col-sm-12 col-md-12" id="formDesign">
+                    <h2><b>Complete your free account setup</b></h2>
+                    <!--
+                    <div class="dropdown drop ">
+                        <button type="button" class="btn dropdown-toggle btn-white dropdownbutton  " data-toggle="dropdown">
+                                         Egypt
+                                    </button>
+                        <div class="dropdown-menu" style="width: 100%;">
+                            <a class="dropdown-item" href="#">Egypt</a>
+                            <a class="dropdown-item" href="#">Algeria</a>
+                            <a class="dropdown-item" href="#">Lebnanon</a>
+                            <a class="dropdown-item" href="#">Angola</a>
+                            <a class="dropdown-item" href="#">Andorra</a>
+                        </div>
+
+                    </div>
+-->
+                    <select class="dropdownbutton" id="mySelect" onchange="myFunction()">
+                         <option value="Egypt">Egypt</option>
+                         <option value="Algeria">Algeria</option>
+                         <option value="Lebnanon">Lebnanon</option>
+                         <option value="Angola">Angola</option>
+                         <option value="Andorra">Andorra</option>
+
+                    </select>
+
+                    <p class="paragraph"><b>I want to :</b></p>
+                    <div class="row">
+                        <div class="col-3">
+                        </div>
+                        <div class="col-3">
+                            <button type="button" class="btn btn-white twiceButton"> Hire for a project</button>
+                        </div>
+                        <div class="col-4">
+                            <button type="button" class="btn btn-white twiceButton ">Work as a freelancer </button>
+
+                        </div>
+
+
+                    </div>
+                    <div class="check">
+                        <input type="checkbox"> Yes! Send me genuinely useful emails every now and then to help me get the most out of Upwork.
+                        </input>
+                    </div>
+
+                    <div class="check2">
+                        <input type="checkbox"> Yes, I understand and agree to the
+                        <a class="aInDiv" href="#">Upwork Terms of Service</a> , including the
+                        <a class="aInDiv" href="#">User Agreement</a> and
+                        <a class="aInDiv" href="#">Privacy Policy</a>.
+                        </input>
+                    </div>
+                    <button id="CreateButton" type="button" class="btn btn-white btns"> 
+                    <b>Create My Account </b></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid secondDiv">
+        <div>
+            <h4><b>Trusted by 5M+ businesses</b></h4>
+        </div>
+        <div class="row">
+            <div class="col-4 col-lg-2   imgMicro">
+                <img src="Microsoft-Logo-2012-present.jpg">
+            </div>
+            <div class="col-lg-2 d-none d-lg-block imgAir">
+                <img src="airbnb_horizontal_lockup_print.jpg">
+            </div>
+            <div class="col-4 col-lg-2 imgEg">
+                <img src="eg.jpg">
+            </div>
+            <div class="col-lg-2 d-none d-lg-block  imgAuto">
+                <img src="automattic-cmyk.jpg">
+            </div>
+            <div class="col-4 col-lg-2 imgBissel">
+                <img src="bissel.png">
+            </div>
+            <div class="col-lg-2 d-none   d-lg-block">
+                <img src="coty-inc.jpg">
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="container-fluid lastDiv">
+        <div>
+            <h4><b>More than 60k jobs are posted on Upwork every week</b></h4>
+        </div>
+        <div class="row" id="lastMiddleDiv">
+            <div class="col-xl-4 col-12 col-sm-12 col-md-12 col-lg-4">
+                <div class="row">
+                    <div class="col-4">
+                        <img class="imgLastDiv" src="job.png">
+                    </div>
+                    <div class="col-8">
+                        <b>Find what you need</b> <br>Choose from specialized freelancers and agencies with 5,000+ skills.
+                    </div>
+                    <hr>
+                </div>
+            </div>
+            <div class="col-xl-4 col-12 col-sm-12 col-md-12 col-lg-4">
+                <div class="row">
+                    <div class="col-4">
+                        <img class="imgLastDiv" src="job.png">
+                    </div>
+                    <div class="col-8">
+                        <b>Find what you need</b> <br>Choose from specialized freelancers and agencies with 5,000+ skills.
+                    </div>
+                    <hr>
+                </div>
+            </div>
+            <div class="col-xl-4 col-12 col-sm-12 col-md-12 col-lg-4">
+                <div class="row">
+                    <div class="col-4">
+                        <img class="imgLastDiv" src="job.png">
+                    </div>
+                    <div class="col-8">
+                        <b>Find what you need</b> <br>Choose from specialized freelancers and agencies with 5,000+ skills.
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div>
+            <p class="footer-copyright"> © 2015 - 2020 Upwork® Global Inc.</p>
+            <ul class="footer-list">
+                <li class="footer-list-item">
+                    <a class="footer-list-link" href="#">Terms of Service</a>
+                </li>
+                <li class="footer-list-item">
+                    <a class="footer-list-link" href="#">Privacy Policy</a>
+                </li>
+                <li class="footer-list-item">
+                    <a class="footer-list-link" href="#">Accessibility</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("mySelect").value;
+            document.getElementById("demo").innerHTML = "You selected: " + x;
+        }
+    </script>
+
+</body>
+
+</html>
