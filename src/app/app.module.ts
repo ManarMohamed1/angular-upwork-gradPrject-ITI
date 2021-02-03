@@ -9,6 +9,8 @@ import { NavbarCategoriesComponent } from './layout/navbar-categories/navbar-cat
 import { DropdownComponent } from './shared/dropdown/dropdown.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup//signup.component';
+import { CustomAppRoutingModule } from './app-routing.module';
+import { ContinueSignUp1Component } from './auth/continue-sign-up1/continue-sign-up1.component';
 
 @NgModule({
   declarations: [
@@ -19,10 +21,12 @@ import { SignupComponent } from './auth/signup//signup.component';
     NavbarCategoriesComponent,
     DropdownComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    ContinueSignUp1Component,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CustomAppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
