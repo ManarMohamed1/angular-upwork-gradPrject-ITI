@@ -1,32 +1,51 @@
 <div id="firstDiv">
     <div class="container" id="blueForm">
+
         <div class="row">
             <div class="col-2 d-xl-block d-lg-none d-sm-none d-md-none d-none "></div>
             <div class="col-xl-8 col-12 col-sm-12 col-md-12" id="formDesign">
-                <h2><b>Get your free account</b></h2>
+                <h2><b>Complete your free account setup</b></h2>
 
-                <a target="popup" onclick="window.open('https://accounts.google.com/signin/v2/identifier?hl=ar&continue=https%3A%2F%2Fwww.google.com%2Fsearch%3Fsafe%3Dactive%26source%3Dhp%26ei%3D2-PjX_HvB8-Ma73wkIAI%26q%3Dgoogle%2Baccount%26oq%3Dgoogle%2Bacc%26gs_lcp%3DCgZwc3ktYWIQAxgAMgUIABCxAzICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADoGCAAQChABOgoIABCxAxCDARAKOggIABCxAxCDAVCEC1jUJmDoL2gBcAB4AIABdogB0QeSAQM4LjKYAQCgAQGqAQdnd3Mtd2l6sAEA%26sclient%3Dpsy-ab&ec=GAlAAQ&flowName=GlifWebSignIn&flowEntry=AddSession','name','width=600,height=400')">
-                    <button type="button" class="btn btn-primary btns">
-                        <img id="googleImage" src="./../../../assets/images/gogle.png">
-                        <b> Continue With Google</b></button></a>
+                <select class="dropdownbutton" id="mySelect" onchange="myFunction()">
+                         <option value="Egypt">Egypt</option>
+                         <option value="Algeria">Algeria</option>
+                         <option value="Lebnanon">Lebnanon</option>
+                         <option value="Angola">Angola</option>
+                         <option value="Andorra">Andorra</option>
 
-                <a target="popup" onclick="window.open('https://idmsa.apple.com/IDMSWebAuth/signin?appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2Faccount%2F&rv=1','name','width=600,height=400')">
-                    <button id="AppleButton" type="button" class="btn btn-white btns">
-                        <i id="appleIcon" class="fab fa-apple"></i> Continue With Apple</button></a>
+                    </select>
 
-                <p class="separator">
-                    <span>or</span>
-                </p>
+                <p class="paragraph"><b>I want to :</b></p>
+                <div class="row">
+                    <div class="col-3">
+                    </div>
+                    <div class="col-3">
+                        <button type="button" class="btn btn-white twiceButton"> Hire for a project</button>
+                    </div>
+                    <div class="col-4">
+                        <button type="button" class="btn btn-white twiceButton ">Work as a freelancer </button>
 
-                <input type="email" placeholder="Work email address" id="emailField">
+                    </div>
 
-                <a [routerLink]="['/continue-signUp1']"> <button id="EmailButton" type="button" class="btn btn-white btns">
-                        <b>Continue with Email</b></button></a>
 
+                </div>
+                <div class="check">
+                    <input type="checkbox"> Yes! Send me genuinely useful emails every now and then to help me get the most out of Upwork.
+                </div>
+
+                <div class="check2">
+                    <input type="checkbox"> Yes, I understand and agree to the
+                    <a class="aInDiv" href="#">Upwork Terms of Service</a> , including the
+                    <a class="aInDiv" href="#">User Agreement</a> and
+                    <a class="aInDiv" href="#">Privacy Policy</a>
+                </div>
+                <button id="CreateButton" type="button" class="btn btn-white btns"> 
+                    <b>Create My Account </b></button>
             </div>
         </div>
     </div>
 </div>
+
 <div class="container-fluid secondDiv">
     <div>
         <h4><b>Trusted by 5M+ businesses</b></h4>
@@ -96,3 +115,10 @@
         </div>
     </div>
 </div>
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("mySelect").value;
+        document.getElementById("demo").innerHTML = "You selected: " + x;
+    }
+</script>

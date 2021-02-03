@@ -1,8 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light sticky-top"
-    style="background-color:#2b5468 ;padding: 1rem; color: #fff;">
-    <a class="navbar-brand" href="#">
-        <svg width="8rem" viewBox="0 0 512 153" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid"
-            style="margin-left: 5%;margin-right:2%">
+<nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color:#2b5468 ;padding: 1rem; color: #fff;">
+    <a class="navbar-brand" [routerLink]="['/home']">
+        <svg width="8rem" viewBox="0 0 512 153" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" style="margin-left: 5%;margin-right:2%">
             <path
                 d="M140.107 96.628c-8.321 0-16.118-3.523-23.202-9.258l1.725-8.096.075-.3c1.536-8.62 6.409-23.089 21.402-23.089 11.244 0 20.39 9.146 20.39 20.39-.038 11.207-9.183 20.353-20.39 20.353zm0-61.395c-19.154 0-33.996 12.444-40.03 32.909-9.221-13.831-16.193-30.435-20.278-44.416H59.184v53.636c0 10.57-8.621 19.19-19.191 19.19-10.57 0-19.19-8.62-19.19-19.19V23.726H.186v53.636c-.075 21.965 17.804 39.993 39.768 39.993 21.965 0 39.844-18.028 39.844-39.993v-8.995c4.01 8.358 8.92 16.791 14.88 24.288l-12.632 59.37h21.103l9.145-43.066c8.021 5.135 17.242 8.359 27.812 8.359 22.601 0 41.005-18.516 41.005-41.118 0-22.564-18.404-40.967-41.005-40.967z"
                 fill="#6FDA44" />
@@ -11,8 +9,7 @@
                 fill="white" />
         </svg>
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -22,9 +19,7 @@
                 <input class="form text-light" type="search" id="searchin" placeholder="Search" />
                 <div class="dropdown text-success" style="position: absolute;top: 0px; right: 80%;">
                     <i class="fas fa-search"></i>
-                    <a class="btn btn-secondary dropdown-toggle text-success bg-transparent border-0" href="#"
-                        role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">
+                    <a class="btn btn-secondary dropdown-toggle text-success bg-transparent border-0" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -49,14 +44,14 @@
                 <a class="nav-link text-light" href="#">Enterprise</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light" href="#">Login</a>
+                <a class="nav-link text-light" [routerLink]="['/login']">Login</a>
             </li>
             <li class="nav-item">
                 <button type="button" class="btn btn-success btn-sm text-light" style="padding: .1rem .5rem;
     font-size: .875rem;
     line-height: 1.5;
     border-radius: .5rem;">
-                    <a class="nav-link text-light" href="#">sign up</a>
+                    <a class="nav-link text-light" [routerLink]="['/signup']">sign up</a>
                 </button>
             </li>
 
