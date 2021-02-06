@@ -1,47 +1,55 @@
 <div id="firstDiv">
     <div class="container" id="blueForm">
+        <form #Form="ngForm">
 
-        <div class="row">
-            <div class="col-2 d-xl-block d-lg-none d-sm-none d-md-none d-none "></div>
-            <div class="col-xl-8 col-12 col-sm-12 col-md-12" id="formDesign">
-                <h2><b>Complete your free account setup</b></h2>
+            <div class="row">
+                <div class="col-2 d-xl-block d-lg-none d-sm-none d-md-none d-none "></div>
+                <div class="col-xl-8 col-12 col-sm-12 col-md-12" id="formDesign">
+                    <h2><b>Complete your free account setup</b></h2>
 
-                <select class="dropdownbutton" id="mySelect" onchange="myFunction()">
+                    <!-- <select class="dropdownbutton" id="mySelect" onchange="myFunction()">
                          <option value="Egypt">Egypt</option>
                          <option value="Algeria">Algeria</option>
                          <option value="Lebnanon">Lebnanon</option>
                          <option value="Angola">Angola</option>
                          <option value="Andorra">Andorra</option>
-                    </select>
+                    </select> -->
 
-                <p class="paragraph"><b>I want to :</b></p>
-                <div class="row">
-                    <div class="col-3">
+                    <select class="dropdownbutton" id="mySelect" [(ngModel)]='person.country.id' class="form-control" name="ddl" id="">
+                            <option *ngFor='let cot of userCountry'  [value]="cot.id">{{cot.name}}</option>
+                           
+                        </select>
+
+                    <p class="paragraph"><b>I want to :</b></p>
+                    <div class="row">
+                        <div class="col-3">
+                        </div>
+                        <div class="col-3">
+                            <button [(ngModel)]='person.project' type="button" class="btn btn-white twiceButton" name="project"> Hire for a project</button>
+                        </div>
+                        <div class="col-4">
+                            <button [(ngModel)]='person.freelancer' type="button" class="btn btn-white twiceButton" name="freelancer">Work as a freelancer </button>
+
+                        </div>
+
+
                     </div>
-                    <div class="col-3">
-                        <button type="button" class="btn btn-white twiceButton"> Hire for a project</button>
-                    </div>
-                    <div class="col-4">
-                        <button type="button" class="btn btn-white twiceButton ">Work as a freelancer </button>
-
+                    <div class="check">
+                        <input [(ngModel)]='person.check' type="checkbox" name="check"> Yes! Send me genuinely useful emails every now and then to help me get the most out of Upwork.
                     </div>
 
-
-                </div>
-                <div class="check">
-                    <input type="checkbox"> Yes! Send me genuinely useful emails every now and then to help me get the most out of Upwork.
-                </div>
-
-                <div class="check2">
-                    <input type="checkbox"> Yes, I understand and agree to the
-                    <a class="aInDiv" href="#">Upwork Terms of Service</a> , including the
-                    <a class="aInDiv" href="#">User Agreement</a> and
-                    <a class="aInDiv" href="#">Privacy Policy</a>
-                </div>
-                <button id="CreateButton" type="button" class="btn btn-white btns"> 
+                    <div class="check2">
+                        <input [(ngModel)]='person.check2' type="checkbox" name="check2"> Yes, I understand and agree to the
+                        <a class="aInDiv" href="#">Upwork Terms of Service</a> , including the
+                        <a class="aInDiv" href="#">User Agreement</a> and
+                        <a class="aInDiv" href="#">Privacy Policy</a>
+                    </div>
+                    <button id="CreateButton" type="button" class="btn btn-white btns" (click)="onSubmit(Form)"> 
                     <b>Create My Account </b></button>
+                </div>
             </div>
-        </div>
+        </form>
+
     </div>
 </div>
 
@@ -115,9 +123,9 @@
     </div>
 </div>
 
-<script>
+<!-- <script>
     function myFunction() {
         var x = document.getElementById("mySelect").value;
         document.getElementById("demo").innerHTML = "You selected: " + x;
     }
-</script>
+</script> -->

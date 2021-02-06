@@ -1,16 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HomeComponent } from './screens/home/home.component';
 import { NavbarCategoriesComponent } from './layout/navbar-categories/navbar-categories.component';
 import { DropdownComponent } from './shared/dropdown/dropdown.component';
-import { LoginComponent } from './auth/login/login.component';
-import { SignupComponent } from './auth/signup//signup.component';
 import { CustomAppRoutingModule } from './app-routing.module';
-import { ContinueSignUp1Component } from './auth/continue-sign-up1/continue-sign-up1.component';
+import { AuthModule } from './auth/auth.module';
+import { UserCountryService } from './_services/user-country.service';
 
 @NgModule({
   declarations: [
@@ -20,15 +18,15 @@ import { ContinueSignUp1Component } from './auth/continue-sign-up1/continue-sign
     HomeComponent,
     NavbarCategoriesComponent,
     DropdownComponent,
-    LoginComponent,
-    SignupComponent,
-    ContinueSignUp1Component,
-  ],
+     ],
   imports: [
     BrowserModule,
+    AuthModule,
     CustomAppRoutingModule,
+   
   ],
-  providers: [],
+  // providers: [HowToCommuAndUnderstandTypeService],
+  providers: [UserCountryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

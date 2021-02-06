@@ -8,7 +8,7 @@ import { Person } from 'src/app/_module/person';
 })
 export class SignupComponent implements OnInit {
 
-  person: Person = { userNameOrEmail: ''};
+  person: Person = { email: ''};
 
   constructor() { }
 

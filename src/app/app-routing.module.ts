@@ -8,9 +8,6 @@ import { HomeComponent } from './screens/home/home.component';
 const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'home', redirectTo: '', pathMatch: 'full' },
-    { path: 'login', component: SignupComponent},
-    {path: 'signup' , component: LoginComponent},
-    {path: 'continue-signUp1', component: ContinueSignUp1Component},
     // {path: 'product/add', component: AddProductComponent},
     // {path: 'product/details/:id', component: ProductDetailsComponent},
     // {path: 'product/edit/:id', component: AddProductComponent},
