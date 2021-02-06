@@ -1,3 +1,12 @@
+import { userCountry } from "./user-country";
+
 export interface Person {
-    userNameOrEmail: string;
+    email?: string;
+    country?: userCountry;
+    iWantTo?:string;
+    check?:boolean;
+    check2?: boolean;
+    freelancer?:boolean;
+    project?:boolean;
+
 }
